@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { ItemLeverCalculator } from './components/ItemLevelCalculator';
 import { StatsCalculator } from './components/StatsCalculator';
 import { NavBar } from './components/NavBar';
@@ -14,7 +14,7 @@ const routesObj=[
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <HashRouter>
     <NavBar/>
       <div style={{minWidth:"100%", padding:"48px"}}>
         <Routes>
@@ -22,7 +22,7 @@ function App() {
         </Routes>
       </div>
 
-    </BrowserRouter>
+    </HashRouter>
     </>
   )
 }

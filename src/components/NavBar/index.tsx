@@ -25,6 +25,7 @@ const links = [
     name: "Stronghold Crafting",
   },
   { path: "https://loa-todo.com/engrave", name: "Engraving" },
+  { path: "/mov-to-dmg", name: "Mov Speed to Damage" },
 ];
 
 export function NavBar() {

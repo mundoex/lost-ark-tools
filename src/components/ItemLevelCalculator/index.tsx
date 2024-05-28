@@ -55,7 +55,7 @@ export function ItemLeverCalculator() {
           position: "relative",
           zIndex: "-1",
           justifyContent: "center",
-          top: { md: "10svh", xs: "20svh" },
+          top: { md: "1svh", xs: "1svh" },
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
         }}

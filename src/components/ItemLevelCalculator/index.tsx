@@ -47,7 +47,6 @@ export function ItemLeverCalculator() {
   return (
     <>
       <Box
-        className="bananoid"
         component="div"
         display="flex"
         sx={{

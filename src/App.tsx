@@ -4,11 +4,13 @@ import { ItemLeverCalculator } from "./components/ItemLevelCalculator";
 import { StatsCalculator } from "./components/StatsCalculator";
 import { NavBar } from "./components/NavBar";
 import { RaidsInfo } from "./components/RaidsInfo";
+import { EngravingCalculator } from "./components/EngravingCalculator";
 
 const routesObj = [
   { path: "/item-level-calc", Component: ItemLeverCalculator },
   { path: "/stats-calc", Component: StatsCalculator },
   { path: "/raids-gold", Component: RaidsInfo },
+  { path: "/engraving-calculator", Component: EngravingCalculator },
 ];
 
 function App() {

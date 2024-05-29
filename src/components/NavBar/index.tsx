@@ -12,6 +12,7 @@ const links = [
   { path: "item-level-calc", name: "Item Level" },
   { path: "stats-calc", name: "Stats" },
   { path: "raids-gold", name: "Raids Gold" },
+  { path: "engraving-calculator", name: "Engraving Calculator WIP" },
   {
     path: "https://maxroll.gg/lost-ark/upgrade-calculator",
     name: "Upgrade Material",

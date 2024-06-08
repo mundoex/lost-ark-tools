@@ -26,8 +26,6 @@ export function RaidsDamageCalculator() {
 
   const [otherBuffsArray, setOtherBuffsArray] = useState<Array<number>>([]);
 
-  const [textFieldState, setTextFieldState] = useState<any>();
-
   const onChangeBaseMovement = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -51,10 +49,6 @@ export function RaidsDamageCalculator() {
 
   const onChangeFeast = () => {
     feast > 0 ? setFeast(0) : setFeast(0.05);
-  };
-
-  const onChangeTextfield = (event: any) => {
-    setTextFieldState(event.target.value);
   };
 
   const onKeyDownOtherBuffs = (event: any) => {
@@ -144,7 +138,6 @@ export function RaidsDamageCalculator() {
             type="number"
             placeholder="Other speed buffs"
             onKeyDown={onKeyDownOtherBuffs}
-            onChange={onChangeTextfield}
           />
           <Box style={{ display: "flex", overflow: "auto", margin: "1svh" }}>
             {otherBuffsArray.map((buff, i) => {

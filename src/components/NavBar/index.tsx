@@ -25,6 +25,7 @@ const links = [
     name: "Stronghold Crafting",
   },
   { path: "https://loa-todo.com/engrave", name: "Engraving" },
+  { path: "/raids-dmg-calc", name: "Raids Captain" },
 ];
 
 export function NavBar() {

@@ -205,12 +205,7 @@ function RaidInfoComponent() {
           </Box>
         )}
         {!isOtherTab && (
-          <Box
-            display="flex"
-            flexDirection="row"
-            justifyContent="center"
-            className="otario"
-          >
+          <Box display="flex" flexDirection="row" justifyContent="center">
             <RaidsTable currentTabIndex={currentTab} />
           </Box>
         )}
@@ -314,11 +309,11 @@ function RaidsTable(props: RaidsTableProps) {
 
   return (
     <>
-      <Box sx={{ width: "70%", display: "inline-flex" }}>
-        <Paper sx={{ width: "100%", mb: 2 }}>
+      <Box sx={{ width: { md: "70%", xs: "100%" }, display: "inline-flex" }}>
+        <Paper sx={{ width: "100%" }}>
           <TableContainer>
             <Table
-              sx={{ minWidth: 800 }}
+              sx={{ minWidth: 950 }}
               aria-labelledby="tableTitle"
               size={"small"}
             >

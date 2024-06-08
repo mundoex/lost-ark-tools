@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route, HashRouter } from "react-router-dom";
 import { ItemLeverCalculator } from "./components/ItemLevelCalculator";
 import { StatsCalculator } from "./components/StatsCalculator";
-import { MovToDmgConvert } from "./components/MovToDmgCalculator";
+import { RaidsDamageCalculator } from "./components/RaidsCaptainCalculator";
 import { NavBar } from "./components/NavBar";
 import { RaidsInfo } from "./components/RaidsInfo";
 
@@ -10,7 +10,7 @@ const routesObj = [
   { path: "/item-level-calc", Component: ItemLeverCalculator },
   { path: "/stats-calc", Component: StatsCalculator },
   { path: "/raids-gold", Component: RaidsInfo },
-  { path: "/mov-to-dmg", Component: MovToDmgConvert },
+  { path: "/raids-dmg-calc", Component: RaidsDamageCalculator },
 ];
 
 function App() {

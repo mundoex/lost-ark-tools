@@ -15,15 +15,22 @@ import { MaterialsEnum, RAIDS_INFO } from "../../common/consts";
 import InfoIcon from "@mui/icons-material/Info";
 import { GoldImage, InputElement, MaterialImage } from "./styles";
 import {
+  AGRIS_SCALE_SRC,
+  ALCAONE_EYE_SRC,
   ARGOS_BLOOD_SRC,
+  CLEAR_ENERGY_OF_WISDOM_SRC,
   COVETOUS_WING_SRC,
+  DARK_FIRE_SRC,
   DEMON_BEAST_BONE_SRC,
+  ELIXIR_SRC,
   EMPYREAN_CONTEMPLATION_SRC,
   EYE_OF_DECAY_SRC,
   GOLD_IMAGE_SRC,
   LIGHTS_TRIAL_SRC,
+  MAGICAL_SPRING_WATER_SRC,
   MAYHEM_HORN_SRC,
   PHANTOM_INTENTION_SRC,
+  SPLENDID_ENERGY_OF_WISDOM_SRC,
   SUNSET_SCALE_SRC,
 } from "../../assets/images-src";
 import {
@@ -51,6 +58,14 @@ const IMAGES_NAME_MAP = {
   [MaterialsEnum.LIGHTS_TRIAL]: { src: LIGHTS_TRIAL_SRC },
   [MaterialsEnum.EMPYREAN_CONTEMPLATION]: { src: EMPYREAN_CONTEMPLATION_SRC },
   [MaterialsEnum.EYE_OF_DECAY]: { src: EYE_OF_DECAY_SRC },
+  [MaterialsEnum.CLEAR_ENERGY_OF_WISDOM]: { src: CLEAR_ENERGY_OF_WISDOM_SRC },
+  [MaterialsEnum.CLEAR_ELIXIR_OF_WISDOM]: { src: ELIXIR_SRC },
+  [MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM]: { src: SPLENDID_ENERGY_OF_WISDOM_SRC },
+  [MaterialsEnum.SPLENDID_ELIXIR_OF_WISDOM]: { src: ELIXIR_SRC },
+  [MaterialsEnum.DARK_FIRE]: { src: DARK_FIRE_SRC },
+  [MaterialsEnum.MAGICAL_SPRING_WATER]: { src: MAGICAL_SPRING_WATER_SRC },
+  [MaterialsEnum.AGRIS_SCALE]: { src: AGRIS_SCALE_SRC },
+  [MaterialsEnum.ALCAONE_EYE]: { src: ALCAONE_EYE_SRC },
 };
 
 interface HeadCell {

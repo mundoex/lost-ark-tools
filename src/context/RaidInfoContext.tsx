@@ -8,7 +8,7 @@ const RAIDS_INFO_OTHER_SAVE_KEY="raidsInfoOtherKey";
 interface RaidsInfoPresetData{
     name:string;
     gateNames:string[];
-    disabledG4Brel:boolean;
+    disabledG4:boolean;
 }
 
 interface IRaidsInfoContext{
@@ -20,7 +20,7 @@ interface IRaidsInfoContext{
     setOther:(newOther:{label:string, gold:number}[]) => void;
     getTotalGold:(rows:RaidsInfoTableData[]) => number;
     getCurrentPresetTotalGold:(rows:RaidsInfoTableData[], index:number) => number;
-    toggleBrelG4:(index:number) => void;
+    toggleG4:(index:number) => void;
     addOther:() => void;
     updateOtherName:(newName:string, index:number) => void;
     updateOtherGold:(newGold:number, index:number) => void;
@@ -28,12 +28,12 @@ interface IRaidsInfoContext{
 }
  
 const DEFAULT_PRESETS:RaidsInfoPresetData[]=[
-    { name:"Preset 1", disabledG4Brel: false, gateNames:[] },
-    { name:"Preset 2", disabledG4Brel: false, gateNames:[] },
-    { name:"Preset 3", disabledG4Brel: false, gateNames:[] },
-    { name:"Preset 4", disabledG4Brel: false, gateNames:[] },
-    { name:"Preset 5", disabledG4Brel: false, gateNames:[] },
-    { name:"Preset 6", disabledG4Brel: false, gateNames:[] },
+    { name:"Preset 1", disabledG4: false, gateNames:[] },
+    { name:"Preset 2", disabledG4: false, gateNames:[] },
+    { name:"Preset 3", disabledG4: false, gateNames:[] },
+    { name:"Preset 4", disabledG4: false, gateNames:[] },
+    { name:"Preset 5", disabledG4: false, gateNames:[] },
+    { name:"Preset 6", disabledG4: false, gateNames:[] },
 ]
 
 const DEFAULT_OTHER:{label:string, gold:number}[]=[];
@@ -47,7 +47,7 @@ export const RaidsInfoContext=createContext<IRaidsInfoContext>({
     getTotalGold:(_:RaidsInfoTableData[]) => 0,
     getCurrentPresetTotalGold:(_:RaidsInfoTableData[], __:number)=>0,
     setOther:()=>null,
-    toggleBrelG4:()=>null,
+    toggleG4:()=>null,
     addOther:() => null,
     updateOtherName:(_:string, __:number) => null,
     updateOtherGold:(_:number, __:number) => null,
@@ -58,11 +58,17 @@ export function RaidsInfoProvider({children}:{children?:JSX.Element|JSX.Element[
     const [presets, setPresets] = usePersistedState(DEFAULT_PRESETS, {name: RAIDS_INFO_PRESETS_SAVE_KEY});
     const [other, setOther] = usePersistedState(DEFAULT_OTHER, {name: RAIDS_INFO_OTHER_SAVE_KEY});
 
+    const canBeDisabled = (gateName:string)=> {
+        const isG4Brel = gateName.includes("Brelshaza") && gateName.includes("4");
+        const isG4Thae = gateName.includes("Thaemine") && gateName.includes("4");
+        return isG4Brel || isG4Thae;
+    }
+
     const getTotalGold =(rows:RaidsInfoTableData[])=>{
         const raidsGold = presets.reduce((acc,curPreset)=>{
             const presetGold = curPreset.gateNames.reduce((acc,cur)=>{
-                const isG4Brel = cur.includes("Brelshaza") && cur.includes("4");
-                if(curPreset.disabledG4Brel && isG4Brel) return acc;
+                const isGateDisablable = canBeDisabled(cur);
+                if(curPreset.disabledG4 && isGateDisablable) return acc;
                 const found = rows.find((row)=>row.name===cur);
                 found ? acc+=found.gold : acc+=0;
                 return acc;
@@ -84,8 +90,8 @@ export function RaidsInfoProvider({children}:{children?:JSX.Element|JSX.Element[
         return currentPreset.gateNames.reduce((acc, cur)=>{
             const foundIndex=rows.findIndex((row)=>row.name===cur);
             if(foundIndex>-1){
-                const isG4Brel = cur.includes("Brelshaza") && cur.includes("4");
-                if(!(isG4Brel && currentPreset.disabledG4Brel)){
+                const isGateDisablable = canBeDisabled(cur);
+                if(!(isGateDisablable && currentPreset.disabledG4)){
                     acc+=rows[foundIndex].gold;
                 }
             }
@@ -98,8 +104,8 @@ export function RaidsInfoProvider({children}:{children?:JSX.Element|JSX.Element[
         setPresets(Array.from(presets));
     }
 
-    const toggleBrelG4 = (index:number)=>{
-        presets[index].disabledG4Brel=!presets[index].disabledG4Brel;
+    const toggleG4 = (index:number)=>{
+        presets[index].disabledG4=!presets[index].disabledG4;
         setPresets(Array.from(presets));
     }
 
@@ -137,7 +143,7 @@ export function RaidsInfoProvider({children}:{children?:JSX.Element|JSX.Element[
         setOther,
         getTotalGold,
         getCurrentPresetTotalGold,
-        toggleBrelG4,
+        toggleG4,
         addOther,
         updateOtherName,
         updateOtherGold,

@@ -26,7 +26,8 @@ export enum MaterialsEnum {
     DARK_FIRE = "Dark Fire",
     MAGICAL_SPRING_WATER = "Magical Spring Water",
     AGRIS_SCALE = "Agris's Scale",
-    ALCAONE_EYE = "Alcaone's Eye"
+    ALCAONE_EYE = "Alcaone's Eye",
+    BEHEMOTH_SCALE = "Behemoth's Scale",
 }
 
 export const RAIDS_INFO: readonly RaidInfo[] = [
@@ -556,6 +557,22 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
                 rewards: { gold: 12500, materials: [{ name: MaterialsEnum.ALCAONE_EYE, quantity: 6 }] },
                 box: { gold: 4100, materials: [{ name: MaterialsEnum.ALCAONE_EYE, quantity: 6 }] },
                 bidBox: [{ name: MaterialsEnum.ALCAONE_EYE, quantity: 5 }],
+            },
+        ],
+    },
+    {
+        name: "Behemoth",
+        gates: [
+            {
+                itemLevelRequired: 1620,
+                rewards: { gold: 6500, materials: [{ name: MaterialsEnum.BEHEMOTH_SCALE, quantity: 10 },{ name: MaterialsEnum.MAGICAL_SPRING_WATER, quantity: 10 }] },
+                box: { gold: 1800, materials: [{ name: MaterialsEnum.BEHEMOTH_SCALE, quantity: 10 },{ name: MaterialsEnum.MAGICAL_SPRING_WATER, quantity: 10 }] },
+            },
+            {
+                itemLevelRequired: 1620,
+                rewards: { gold: 11500, materials: [{ name: MaterialsEnum.BEHEMOTH_SCALE, quantity: 20 },{ name: MaterialsEnum.MAGICAL_SPRING_WATER, quantity: 18 }] },
+                box: { gold: 2700, materials: [{ name: MaterialsEnum.BEHEMOTH_SCALE, quantity: 20 },{ name: MaterialsEnum.MAGICAL_SPRING_WATER, quantity: 18 }] },
+                bidBox: [{ name: MaterialsEnum.BEHEMOTH_SCALE, quantity: 20 }],
             },
         ],
     },

@@ -18,6 +18,7 @@ import {
   AGRIS_SCALE_SRC,
   ALCAONE_EYE_SRC,
   ARGOS_BLOOD_SRC,
+  BEHEMOTH_SCALE_SRC,
   CLEAR_ENERGY_OF_WISDOM_SRC,
   COVETOUS_WING_SRC,
   DARK_FIRE_SRC,
@@ -66,6 +67,7 @@ const IMAGES_NAME_MAP = {
   [MaterialsEnum.MAGICAL_SPRING_WATER]: { src: MAGICAL_SPRING_WATER_SRC },
   [MaterialsEnum.AGRIS_SCALE]: { src: AGRIS_SCALE_SRC },
   [MaterialsEnum.ALCAONE_EYE]: { src: ALCAONE_EYE_SRC },
+  [MaterialsEnum.BEHEMOTH_SCALE]: { src: BEHEMOTH_SCALE_SRC },
 };
 
 interface HeadCell {
@@ -161,8 +163,8 @@ function RaidInfoComponent() {
 
   const onChangeTab = (_: React.SyntheticEvent, newValue: number) =>
     setCurrentTab(newValue);
-  const onChangeBrelBox = (_: React.SyntheticEvent) =>
-    context.toggleBrelG4(currentTab);
+  const onChangeG4Box = (_: React.SyntheticEvent) =>
+    context.toggleG4(currentTab);
   const onChangePresetName = (e: React.ChangeEvent<HTMLInputElement>) =>
     context.setPresetName(e.target.value, currentTab);
 
@@ -208,11 +210,11 @@ function RaidInfoComponent() {
             </div>
             <FormGroup>
               <FormControlLabel
-                label="Disable G4 Brel"
+                label="Disable G4 Brel/Thae"
                 control={
                   <Checkbox
-                    checked={currentSelectedPreset.disabledG4Brel}
-                    onChange={onChangeBrelBox}
+                    checked={currentSelectedPreset.disabledG4}
+                    onChange={onChangeG4Box}
                   />
                 }
               />

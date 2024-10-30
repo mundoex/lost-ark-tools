@@ -9,6 +9,7 @@ interface RaidsInfoPresetData{
     name:string;
     gateNames:string[];
     disabledG4:boolean;
+    hideItemLevelContentBelow:number;
 }
 
 interface IRaidsInfoContext{
@@ -25,15 +26,16 @@ interface IRaidsInfoContext{
     updateOtherName:(newName:string, index:number) => void;
     updateOtherGold:(newGold:number, index:number) => void;
     removeOther:(index:number) => void;
+    setHideItemLevel:(itemLevel:number, index:number) => void;
 }
  
 const DEFAULT_PRESETS:RaidsInfoPresetData[]=[
-    { name:"Preset 1", disabledG4: false, gateNames:[] },
-    { name:"Preset 2", disabledG4: false, gateNames:[] },
-    { name:"Preset 3", disabledG4: false, gateNames:[] },
-    { name:"Preset 4", disabledG4: false, gateNames:[] },
-    { name:"Preset 5", disabledG4: false, gateNames:[] },
-    { name:"Preset 6", disabledG4: false, gateNames:[] },
+    { name:"Preset 1", disabledG4: false, gateNames:[], hideItemLevelContentBelow:0 },
+    { name:"Preset 2", disabledG4: false, gateNames:[], hideItemLevelContentBelow:0 },
+    { name:"Preset 3", disabledG4: false, gateNames:[], hideItemLevelContentBelow:0 },
+    { name:"Preset 4", disabledG4: false, gateNames:[], hideItemLevelContentBelow:0 },
+    { name:"Preset 5", disabledG4: false, gateNames:[], hideItemLevelContentBelow:0 },
+    { name:"Preset 6", disabledG4: false, gateNames:[], hideItemLevelContentBelow:0 },
 ]
 
 const DEFAULT_OTHER:{label:string, gold:number}[]=[];
@@ -52,6 +54,7 @@ export const RaidsInfoContext=createContext<IRaidsInfoContext>({
     updateOtherName:(_:string, __:number) => null,
     updateOtherGold:(_:number, __:number) => null,
     removeOther:(_:number) => null,
+    setHideItemLevel:(_:number, __:number) => null,
 });
 
 export function RaidsInfoProvider({children}:{children?:JSX.Element|JSX.Element[]}){
@@ -114,6 +117,11 @@ export function RaidsInfoProvider({children}:{children?:JSX.Element|JSX.Element[
         setPresets(Array.from(presets));
     }
 
+    const setHideItemLevel = (itemLevel:number, index:number)=>{
+        presets[index].hideItemLevelContentBelow=itemLevel;
+        setPresets(Array.from(presets));
+    }
+
     const addOther=()=>{
         other.push({label:"Default", gold:0});
         setOther(Array.from(other));
@@ -148,6 +156,7 @@ export function RaidsInfoProvider({children}:{children?:JSX.Element|JSX.Element[
         updateOtherName,
         updateOtherGold,
         removeOther,
+        setHideItemLevel,
     }
 
     return <RaidsInfoContext.Provider value={exportValue}>

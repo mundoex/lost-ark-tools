@@ -7,6 +7,7 @@ import magicalSpringWater from "/magical_spring_water.webp";
 import agrisScale from "/agris_scale.webp";
 import alcaoneEye from "/alcaone_eye.webp";
 import behemothScale from "/behemoth_scale.png";
+import hellfireKeystone from "/hellfire_keystone.webp";
 
 export const GOLD_IMAGE_SRC="https://i.imgur.com/2SWmGw4.png";
 export const SUNSET_SCALE_SRC="https://lostarkcodex.com/icons/use_7_188.webp"
@@ -27,3 +28,4 @@ export const MAGICAL_SPRING_WATER_SRC = magicalSpringWater;
 export const AGRIS_SCALE_SRC = agrisScale;
 export const ALCAONE_EYE_SRC = alcaoneEye;
 export const BEHEMOTH_SCALE_SRC = behemothScale;
+export const HELLFIRE_KEYSTONE_SRC = hellfireKeystone;

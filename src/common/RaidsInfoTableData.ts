@@ -8,4 +8,5 @@ export interface RaidsInfoTableData {
     boxes: Reward;
     bidBox?: Material[];
     totalRaidGold?:number;
+    itemLevel:number;
 }

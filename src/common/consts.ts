@@ -28,6 +28,7 @@ export enum MaterialsEnum {
     AGRIS_SCALE = "Agris's Scale",
     ALCAONE_EYE = "Alcaone's Eye",
     BEHEMOTH_SCALE = "Behemoth's Scale",
+    HELLFIRE_KEYSTONE = "Hellfire Keystone",
 }
 
 export const RAIDS_INFO: readonly RaidInfo[] = [
@@ -360,18 +361,18 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
         gates: [
             {
                 itemLevelRequired: 1580,
-                rewards: { gold: 1400, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
-                box: { gold: 720, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
+                rewards: { gold: 800, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
+                box: { gold: 360, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
             },
             {
                 itemLevelRequired: 1580,
-                rewards: { gold: 1800, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
-                box: { gold: 880, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
+                rewards: { gold: 1440, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
+                box: { gold: 440, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
             },
             {
                 itemLevelRequired: 1580,
-                rewards: { gold: 3600, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 5 }] },
-                box: { gold: 1200, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 5 }] },
+                rewards: { gold: 2080, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 5 }] },
+                box: { gold: 600, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 5 }] },
             },
         ],
     },
@@ -380,17 +381,17 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
         gates: [
             {
                 itemLevelRequired: 1580,
-                rewards: { gold: 1750, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
+                rewards: { gold: 1000, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
                 box: { gold: 450, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
             },
             {
                 itemLevelRequired: 1580,
-                rewards: { gold: 2250, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
-                box: { gold: 550, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
+                rewards: { gold: 1800, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
+                box: { gold: 500, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 3 }] },
             },
             {
                 itemLevelRequired: 1580,
-                rewards: { gold: 4500, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 5 }] },
+                rewards: { gold: 2600, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 5 }] },
                 box: { gold: 750, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 5 }] },
                 bidBox: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 5 }],
             },
@@ -401,17 +402,17 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
         gates: [
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 2250, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 7 }] },
+                rewards: { gold: 1500, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 7 }] },
                 box: { gold: 600, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 7 }] },
             },
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 2750, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 7 }] },
+                rewards: { gold: 2500, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 7 }] },
                 box: { gold: 700, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 7 }] },
             },
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 6000, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 8 }] },
+                rewards: { gold: 3500, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 8 }] },
                 box: { gold: 950, materials: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 8 }] },
                 bidBox: [{ name: MaterialsEnum.EYE_OF_DECAY, quantity: 10 }],
             },
@@ -422,17 +423,17 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
         gates: [
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 1600, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
+                rewards: { gold: 1200, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
                 box: { gold: 400, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
             },
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 2400, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
+                rewards: { gold: 1600, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
                 box: { gold: 440, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
             },
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 3200, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 8 },{ name: MaterialsEnum.CLEAR_ELIXIR_OF_WISDOM, quantity: 2 }] },
+                rewards: { gold: 2400, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 8 },{ name: MaterialsEnum.CLEAR_ELIXIR_OF_WISDOM, quantity: 2 }] },
                 box: { gold: 720, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 8 },{ name: MaterialsEnum.CLEAR_ELIXIR_OF_WISDOM, quantity: 2 }] },
             },
         ],
@@ -442,17 +443,17 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
         gates: [
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 2000, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
+                rewards: { gold: 1500, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
                 box: { gold: 500, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
             },
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 3000, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
+                rewards: { gold: 2000, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
                 box: { gold: 550, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 4 }] },
             },
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 4000, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 8 },{ name: MaterialsEnum.CLEAR_ELIXIR_OF_WISDOM, quantity: 2 }] },
+                rewards: { gold: 3000, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 8 },{ name: MaterialsEnum.CLEAR_ELIXIR_OF_WISDOM, quantity: 2 }] },
                 box: { gold: 900, materials: [{ name: MaterialsEnum.CLEAR_ENERGY_OF_WISDOM, quantity: 8 },{ name: MaterialsEnum.CLEAR_ELIXIR_OF_WISDOM, quantity: 2 }] },
                 bidBox: [{ name: MaterialsEnum.CLEAR_ELIXIR_OF_WISDOM, quantity: 2 }],
             },
@@ -463,17 +464,17 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
         gates: [
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 3500, materials: [{ name: MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM, quantity: 4 }] },
+                rewards: { gold: 3000, materials: [{ name: MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM, quantity: 4 }] },
                 box: { gold: 750, materials: [{ name: MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM, quantity: 4 }] },
             },
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 4500, materials: [{ name: MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM, quantity: 4 }] },
+                rewards: { gold: 4000, materials: [{ name: MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM, quantity: 4 }] },
                 box: { gold: 900, materials: [{ name: MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM, quantity: 4 }] },
             },
             {
                 itemLevelRequired: 1600,
-                rewards: { gold: 6500, materials: [{ name: MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM, quantity: 8 },{ name: MaterialsEnum.SPLENDID_ELIXIR_OF_WISDOM, quantity: 2 }] },
+                rewards: { gold: 6000, materials: [{ name: MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM, quantity: 8 },{ name: MaterialsEnum.SPLENDID_ELIXIR_OF_WISDOM, quantity: 2 }] },
                 box: { gold: 1350, materials: [{ name: MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM, quantity: 8 },{ name: MaterialsEnum.SPLENDID_ELIXIR_OF_WISDOM, quantity: 2 }] },
                 bidBox: [{ name: MaterialsEnum.SPLENDID_ELIXIR_OF_WISDOM, quantity: 2 }],
             },
@@ -528,16 +529,16 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
         ],
     },
     {
-        name: "Echidna  (Normal)",
+        name: "Echidna (Normal)",
         gates: [
             {
                 itemLevelRequired: 1620,
-                rewards: { gold: 5000, materials: [{ name: MaterialsEnum.AGRIS_SCALE, quantity: 3 }] },
+                rewards: { gold: 6000, materials: [{ name: MaterialsEnum.AGRIS_SCALE, quantity: 3 }] },
                 box: { gold: 2200, materials: [{ name: MaterialsEnum.AGRIS_SCALE, quantity: 3 }] },
             },
             {
                 itemLevelRequired: 1620,
-                rewards: { gold: 9500, materials: [{ name: MaterialsEnum.AGRIS_SCALE, quantity: 6 }] },
+                rewards: { gold: 10000, materials: [{ name: MaterialsEnum.AGRIS_SCALE, quantity: 6 }] },
                 box: { gold: 3400, materials: [{ name: MaterialsEnum.AGRIS_SCALE, quantity: 6 }] },
                 bidBox: [{ name: MaterialsEnum.AGRIS_SCALE, quantity: 5 }],
             },
@@ -545,11 +546,11 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
         ],
     },
     {
-        name: "Echidna  (Hard)",
+        name: "Echidna (Hard)",
         gates: [
             {
                 itemLevelRequired: 1630,
-                rewards: { gold: 6000, materials: [{ name: MaterialsEnum.ALCAONE_EYE, quantity: 3 }] },
+                rewards: { gold: 7000, materials: [{ name: MaterialsEnum.ALCAONE_EYE, quantity: 3 }] },
                 box: { gold: 2800, materials: [{ name: MaterialsEnum.ALCAONE_EYE, quantity: 3 }] },
             },
             {
@@ -573,6 +574,38 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
                 rewards: { gold: 11500, materials: [{ name: MaterialsEnum.BEHEMOTH_SCALE, quantity: 20 },{ name: MaterialsEnum.MAGICAL_SPRING_WATER, quantity: 18 }] },
                 box: { gold: 2700, materials: [{ name: MaterialsEnum.BEHEMOTH_SCALE, quantity: 20 },{ name: MaterialsEnum.MAGICAL_SPRING_WATER, quantity: 18 }] },
                 bidBox: [{ name: MaterialsEnum.BEHEMOTH_SCALE, quantity: 20 }],
+            },
+        ],
+    },
+    {
+        name: "Aegir (Normal)",
+        gates: [
+            {
+                itemLevelRequired: 1660,
+                rewards: { gold: 7500, materials: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 4 }] },
+                box: { gold: 3200, materials: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 4 }] },
+            },
+            {
+                itemLevelRequired: 1620,
+                rewards: { gold: 15500, materials: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 6 }] },
+                box: { gold: 5300, materials: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 6 }] },
+                bidBox: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 5 }],
+            },
+        ],
+    },
+    {
+        name: "Aegir (Hard)",
+        gates: [
+            {
+                itemLevelRequired: 1680,
+                rewards: { gold: 9000, materials: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 8 }] },
+                box: { gold: 4100, materials: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 8 }] },
+            },
+            {
+                itemLevelRequired: 1620,
+                rewards: { gold: 18500, materials: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 12 }] },
+                box: { gold: 6600, materials: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 12 }] },
+                bidBox: [{ name: MaterialsEnum.HELLFIRE_KEYSTONE, quantity: 10 }],
             },
         ],
     },

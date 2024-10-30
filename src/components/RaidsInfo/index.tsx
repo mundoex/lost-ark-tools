@@ -27,6 +27,7 @@ import {
   EMPYREAN_CONTEMPLATION_SRC,
   EYE_OF_DECAY_SRC,
   GOLD_IMAGE_SRC,
+  HELLFIRE_KEYSTONE_SRC,
   LIGHTS_TRIAL_SRC,
   MAGICAL_SPRING_WATER_SRC,
   MAYHEM_HORN_SRC,
@@ -40,6 +41,7 @@ import {
   IconButton,
   Tab,
   Tabs,
+  TextField,
   Tooltip,
 } from "@mui/material";
 import { RaidsInfoTableData } from "../../common/RaidsInfoTableData";
@@ -68,6 +70,7 @@ const IMAGES_NAME_MAP = {
   [MaterialsEnum.AGRIS_SCALE]: { src: AGRIS_SCALE_SRC },
   [MaterialsEnum.ALCAONE_EYE]: { src: ALCAONE_EYE_SRC },
   [MaterialsEnum.BEHEMOTH_SCALE]: { src: BEHEMOTH_SCALE_SRC },
+  [MaterialsEnum.HELLFIRE_KEYSTONE]: { src: HELLFIRE_KEYSTONE_SRC },
 };
 
 interface HeadCell {
@@ -115,6 +118,7 @@ const rows: RaidsInfoTableData[] = RAIDS_INFO.reduce((acc, cur) => {
     const d: RaidsInfoTableData = {
       name: `${cur.name} Gate ${i + 1}`,
       gold: gateInfo.rewards.gold,
+      itemLevel: gateInfo.itemLevelRequired,
       materials: gateInfo.rewards.materials,
       boxes: gateInfo.box,
       bidBox: gateInfo?.bidBox,
@@ -167,7 +171,8 @@ function RaidInfoComponent() {
     context.toggleG4(currentTab);
   const onChangePresetName = (e: React.ChangeEvent<HTMLInputElement>) =>
     context.setPresetName(e.target.value, currentTab);
-
+  const onChangeHideItemLevel = (e: React.ChangeEvent<HTMLInputElement>) =>
+    context.setHideItemLevel(parseInt(e.target.value), currentTab);
   return (
     <>
       <Box
@@ -211,11 +216,18 @@ function RaidInfoComponent() {
             <FormGroup>
               <FormControlLabel
                 label="Disable G4 Brel/Thae"
-                control={
-                  <Checkbox
+                control={<>
+                <TextField 
+                  id="hide-item-level"
+                  sx={{ '& > :not(style)': { m: 0, width: '110px' } }}
+                  label="Hide iLevel"
+                  value={currentSelectedPreset?.hideItemLevelContentBelow ?? 0}
+                  onChange={onChangeHideItemLevel}/>
+                <Checkbox
                     checked={currentSelectedPreset.disabledG4}
                     onChange={onChangeG4Box}
                   />
+                </>
                 }
               />
             </FormGroup>
@@ -341,7 +353,7 @@ function RaidsTable(props: RaidsTableProps) {
             >
               <EnhancedTableHead />
               <TableBody>
-                {rows.map((row, index) => {
+                {rows.filter((r)=>r.itemLevel>=(currentPreset?.hideItemLevelContentBelow ?? 0)).map((row, index) => {
                   const isItemSelected = isSelected(row.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 

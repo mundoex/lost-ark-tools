@@ -173,6 +173,7 @@ function RaidInfoComponent() {
     context.setPresetName(e.target.value, currentTab);
   const onChangeHideItemLevel = (e: React.ChangeEvent<HTMLInputElement>) =>
     context.setHideItemLevel(parseInt(e.target.value), currentTab);
+  
   return (
     <>
       <Box

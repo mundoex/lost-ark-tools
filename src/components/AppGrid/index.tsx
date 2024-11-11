@@ -1,35 +1,35 @@
 import { Grid } from "@mui/material";
 import {AppCard, AppCardProps} from "../AppCard";
 import { useNavigate } from "react-router-dom";
-import { GOLD_IMAGE_SRC } from "../../assets/images-src";
+import { DARK_FIRE_SRC, GOLD_IMAGE_SRC } from "../../assets/images-src";
 
 export function AppGrid() {
     const navigate = useNavigate();
 
     const apps:AppCardProps[]=[
         {
-            imagePath: "./lost-ark-tools/abilitystone.png",
+            imagePath: "./abilitystone.png",
             title: "Ability Stone Cutter",
             subtitle: "Helps cutting stones",
             external: true,
             onClick: ()=> window.open('https://lostark.meta-game.gg/ability-stone-calculator','_blank')
         },
         {
-            imagePath: "./lost-ark-tools/la-tools.png",
+            imagePath: "./la-tools.png",
             title: "Crafting Calculator",
             subtitle: "Calculates profitable crafts",
             external: true,
             onClick: ()=> window.open('https://la-tools.com/crafting-calculator','_blank')
         },
         {
-            imagePath: "./lost-ark-tools/honing-calc.png",
+            imagePath: "./honing-calc.png",
             title: "Honing Calculator",
             subtitle: "Helps calculate price of honing",
             external: true,
             onClick: ()=> window.open('https://maxroll.gg/lost-ark/upgrade-calculator','_blank')
         },
         {
-            imagePath: "./lost-ark-tools/helm.png",
+            imagePath: "./helm.png",
             title: "Item Level Calculator",
             subtitle: "Helps calculate item level",
             external: false,
@@ -41,6 +41,13 @@ export function AppGrid() {
             subtitle: "Calculate weekly raids gold",
             external: false,
             onClick: ()=> navigate("/raids-gold")
+        },
+        {
+            imagePath: DARK_FIRE_SRC,
+            title: "Jail Check",
+            subtitle: "Help check for jailers",
+            external: false,
+            onClick: ()=> navigate("/jail-check")
         },
     ];
   

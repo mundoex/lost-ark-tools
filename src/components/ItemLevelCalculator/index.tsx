@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Box, TextField } from "@mui/material";
 
 export function ItemLeverCalculator() {
-  const images=['./lost-ark-tools/helm.png','./lost-ark-tools/shoulder.png','./lost-ark-tools/body.png',
-    './lost-ark-tools/legs.png','./lost-ark-tools/gloves.png','./lost-ark-tools/weapon.png'
+  const images=['./helm.png','./shoulder.png','./body.png',
+    './legs.png','./gloves.png','./weapon.png'
   ];
   const [itemLevels, setItemLevels]=useState(new Array(6).fill(0));
   const totalItemLevel = itemLevels.reduce((a, b) => (a += b)) / itemLevels.length;

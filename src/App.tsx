@@ -5,11 +5,13 @@ import { createTheme, ThemeOptions, ThemeProvider } from '@mui/material/styles';
 import { RaidsInfo } from "./components/RaidsInfo";
 import { AppGrid } from "./components/AppGrid";
 import { CustomAppBar } from "./components/CustomAppBar";
+import { JailCheck } from "./components/JailCheck";
 
 const routesObj = [
   { path: "", Component: AppGrid },
   { path: "/item-level-calc", Component: ItemLeverCalculator },
   { path: "/raids-gold", Component: RaidsInfo },
+  { path: "/jail-check", Component: JailCheck },
 ];
 
 const darkTheme: ThemeOptions = createTheme({

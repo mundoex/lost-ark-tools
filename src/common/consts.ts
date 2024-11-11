@@ -2,12 +2,10 @@ import { RaidInfo } from "./RaidInfo";
 
 export const PET_BUFFS:readonly string[] = ["none", "crit", "specialization", "swiftness","expertise","domination","endurance"];
 export const GEAR_NAMES:readonly string[] = ["Helmet", "Pauldrons", "Chestpiece", "Pants", "Gloves", "Weapon"];
-export const GEAR_LEVELS:readonly number[] = [
-    500, 545, 590, 635, 680, 725, 765, 805, 845, 885, 925, 960, 995, 1030, 1065, 1100, //other
-    1250, 1275, 1295, 1310, 1325, 1340, 1355, 1370, 1385, 1400, 1415, 1430, 1445, 1460, 1475, 1490,    //valtan
-    1510, 1520, 1530, 1540, 1550, 1560, 1570, 1580,    //brel
-    1585, 1590, 1595, 1600, 1605, 1610, 1615, 1620, 1625, 1630, 1635, 1640, 1645, 1650   //akkan
-];
+
+export const SUPPORTS_CLASS_NAMES = ['Bard','Paladin','Artist'];
+export const PARTY_COLORS=['green','purple','#34ebe8','#d4cf3f'];
+export const TIER_COLORS=['#d4240d','#d44c0d','#d4b60f','#099928','#0d81d4'];
 
 export enum MaterialsEnum {
     SUNSET_SCALE = "Sunset Scale",

@@ -4,6 +4,7 @@ import { formatNumber } from "../../../utils/utils";
 import { TierColorGrade } from "../TierColorGrade";
 import { TIER_COLORS } from "../../../common/consts";
 import { EntityStatsPlus } from "../../../common/EntityStatsPlus";
+import { BASE_LOGS_API_URL } from "../api";
 
 //A B C D E
 const gapTier=[55, 65, 75, 85, 95];
@@ -105,7 +106,7 @@ export function EntityDataGrid({currentSelectedPlayerData}:{currentSelectedPlaye
                   srcSet={row.class && CLASS_ICON_MAP[row.class.toLowerCase()]}
                   onClick={() =>
                     window.open(
-                      `https://logs.snow.xyz/logs/${row.id}`,
+                      `${BASE_LOGS_API_URL}/${row.id}`,
                       "_blank",
                     )
                   }

@@ -3,21 +3,26 @@ import {
   Box,
   CircularProgress,
   Grid,
+  IconButton,
   TextField,
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import DeleteIcon from '@mui/icons-material/Delete';
 import { CLASS_ICON_MAP } from "../../assets/images-src";
-import { removeAccents } from "../../utils/utils";
 import { EncounterData } from "../../common/EncounterData";
 import { EntityStats } from "../../common/EntityStats";
 import { EntityStatsPlus } from "../../common/EntityStatsPlus";
 import { Entity } from "../../common/Entity";
 import { GemType } from "../../common/GemType";
-import { findLogs, getLogData } from "./api";
+import { BASE_LOGS_API_URL, useLogsApiFunctionsForUrl } from "./api";
 import { PARTY_COLORS, SUPPORTS_CLASS_NAMES } from "../../common/consts";
 import { useDebounce } from "../../common/useDebounce";
 import { EntityDataGrid } from "./EntityDataGrid";
+import usePersistedState from "@utilityjs/use-persisted-state";
+import { SnackbarProvider, useSnackbar } from 'notistack';
+
+const API_URL_SAVE_KEY = "apiUrlSaveKey"
 
 // const I_LVL_HEURISTIC = 6.1;
 // const GEM_HEURISTIC_T3_10 = 0.06;
@@ -141,9 +146,9 @@ function getEncounterPlayersStats(encounter: EncounterData): EntityStatsPlus[] {
         : {}),
       ...(player.isSupport
         ? {
-            avgDmgBuffedBySupportIdentityPercent:
-              totalSuppIdentityPercentSum / 3,
-          }
+          avgDmgBuffedBySupportIdentityPercent:
+            totalSuppIdentityPercentSum / 3,
+        }
         : {}),
       ...(!player.isSupport
         ? { dpsPartyGapPercent: (player.dps / highestdpsInParty) * 100 }
@@ -151,9 +156,9 @@ function getEncounterPlayersStats(encounter: EncounterData): EntityStatsPlus[] {
       ...(!player.isSupport ? { dpsGapPercent: dpsGapPercent } : {}),
       ...(!player.isSupport
         ? {
-            dpsGapAdjustedPercent:
-              ((player.dps / highestdpsInParty) * 100 + dpsGapPercent) / 2,
-          }
+          dpsGapAdjustedPercent:
+            ((player.dps / highestdpsInParty) * 100 + dpsGapPercent) / 2,
+        }
         : {}),
     };
     return obj;
@@ -202,10 +207,12 @@ function getEncounterPlayersStats(encounter: EncounterData): EntityStatsPlus[] {
 
 type Parties = [string[], string[], string[], string[]];
 
-export function JailCheck() {
+export function JailCheckComponent() {
+  const { enqueueSnackbar } = useSnackbar();
+  const [apiUrl, setApiUrl] = usePersistedState<string>(BASE_LOGS_API_URL, { name: API_URL_SAVE_KEY });
   const [searchTerm, setSearchTerm] = useState<string>();
-  const debouncedSearchTerm = useDebounce(searchTerm, 750);
-  const [searching, setSearching] = useState<boolean>(false);
+  const debouncedSearchTerm = useDebounce(searchTerm, 1000);
+  const [searching, setSearching] = useState<string[]>([]);
   const [map, setMap] = useState(new Map<string, EntityStatsPlus[]>());
   const [selectedPlayer, setSelectedPlayer] = useState<string>("");
   const [parties, setParties] = useState<Parties>([
@@ -214,6 +221,9 @@ export function JailCheck() {
     ["", "", "", ""],
     ["", "", "", ""],
   ]);
+
+  const { findLogs, getLogData } = useLogsApiFunctionsForUrl(apiUrl);
+
   const currentSelectedPlayerData = map.get(selectedPlayer) ?? [];
 
   const onChangePlayerName = (
@@ -237,11 +247,10 @@ export function JailCheck() {
   };
 
   useEffect(() => {
-    if (
-      debouncedSearchTerm?.toLowerCase() &&
-      !map.has(debouncedSearchTerm?.toLowerCase())
-    ) {
-      setSearching(true);
+    if (debouncedSearchTerm?.toLowerCase() && !map.has(debouncedSearchTerm?.toLowerCase())) {
+      searching.push(debouncedSearchTerm?.toLowerCase());
+      setSearching(Array.from(searching));
+      enqueueSnackbar(`Searching for: ${debouncedSearchTerm?.toLowerCase()}`, { variant: 'info' });
       findLogs(debouncedSearchTerm).then((resp) => {
         const logsIds = resp.encounters.map((e) => e.id);
         const getLogsPromises = logsIds.map((id) => getLogData(id));
@@ -249,24 +258,30 @@ export function JailCheck() {
           .then((encountersDataArray) => {
             let arr: EntityStatsPlus[] = [];
             encountersDataArray.forEach((data) => {
-              const encounterPlayersData = getEncounterPlayersStats(
-                data.encounter,
-              );
+              const encounterPlayersData = getEncounterPlayersStats(data.encounter);
               encounterPlayersData.forEach((stats) => {
-                if (
-                  removeAccents(stats.name?.toLowerCase()) ===
-                  debouncedSearchTerm?.toLowerCase()
-                ) {
+                if (stats.name === debouncedSearchTerm?.toLowerCase()) {
                   arr.push(stats);
                 }
               });
             });
             setMap(map.set(debouncedSearchTerm?.toLowerCase(), arr));
           })
+          .catch(() => {
+            enqueueSnackbar(`Error for: ${debouncedSearchTerm?.toLowerCase()}`, { variant: 'error' });
+            const newSearchingArr = searching.filter((n) => n !== debouncedSearchTerm?.toLowerCase());
+            setSearching(newSearchingArr);
+          })
           .finally(() => {
-            setSearching(false);
+            enqueueSnackbar(`Found: ${debouncedSearchTerm?.toLowerCase()}`, { variant: 'success' });
             setSelectedPlayer(debouncedSearchTerm?.toLowerCase());
+            const newSearchingArr = searching.filter((n) => n !== debouncedSearchTerm?.toLowerCase());
+            setSearching(newSearchingArr);
           });
+      }).catch(() => {
+        enqueueSnackbar(`Error for: ${debouncedSearchTerm?.toLowerCase()}`, { variant: 'error' });
+        const newSearchingArr = searching.filter((n) => n !== debouncedSearchTerm?.toLowerCase());
+        setSearching(newSearchingArr);
       });
     }
   }, [debouncedSearchTerm]);
@@ -283,6 +298,24 @@ export function JailCheck() {
           marginTop: "16px",
         }}
       >
+        <Box sx={{ display: "flex", flexDirection: "row", marginBottom: 1 }}>
+          <TextField
+            label="API Url"
+            variant="outlined"
+            size="small"
+            value={apiUrl}
+            onChange={(e) => setApiUrl(e.target.value)}
+            sx={{ width: "100%" }}
+          />
+          <IconButton onClick={() => setApiUrl(BASE_LOGS_API_URL)} aria-label="delete" size="small" sx={{
+            '&:hover': {
+              backgroundColor: 'transparent',
+            }
+          }}>
+            <DeleteIcon fontSize="inherit" />
+          </IconButton>
+        </Box>
+
         <Grid container spacing={2}>
           {parties.map((party, partyIndex) => (
             <Grid item xs={6} key={partyIndex}>
@@ -308,10 +341,10 @@ export function JailCheck() {
                         <Avatar
                           srcSet={
                             CLASS_ICON_MAP[
-                              getPlayerByIndexes(
-                                partyIndex,
-                                playerIndex,
-                              )?.[0]?.class.toLowerCase() ?? "player"
+                            getPlayerByIndexes(
+                              partyIndex,
+                              playerIndex,
+                            )?.[0]?.class.toLowerCase() ?? "player"
                             ]
                           }
                           onClick={(e) =>
@@ -347,7 +380,7 @@ export function JailCheck() {
             </Grid>
           ))}
         </Grid>
-        {searching && (
+        {searching?.length > 0 && (
           <Box
             sx={{
               display: "flex",
@@ -362,7 +395,7 @@ export function JailCheck() {
           >
             <CircularProgress size={20} color="primary" />
             <Typography variant="subtitle1" sx={{ marginLeft: 1 }}>
-              {`Searching for:${debouncedSearchTerm?.toLowerCase()}`}
+              {`Searching for: ${searching.toString()}`}
             </Typography>
           </Box>
         )}
@@ -370,4 +403,10 @@ export function JailCheck() {
       <EntityDataGrid currentSelectedPlayerData={currentSelectedPlayerData} />
     </>
   );
+}
+
+export function JailCheck() {
+  return <SnackbarProvider maxSnack={3}>
+    <JailCheckComponent />
+  </SnackbarProvider>
 }

@@ -6,12 +6,16 @@ import { RaidsInfo } from "./components/RaidsInfo";
 import { AppGrid } from "./components/AppGrid";
 import { CustomAppBar } from "./components/CustomAppBar";
 import { JailCheck } from "./components/JailCheck";
+import { MarketPrices } from "./components/MarketPrices";
+import { GoldEfficiency } from "./components/GoldEfficiency";
 
 const routesObj = [
   { path: "", Component: AppGrid },
   { path: "/item-level-calc", Component: ItemLeverCalculator },
   { path: "/raids-gold", Component: RaidsInfo },
   { path: "/jail-check", Component: JailCheck },
+  { path: "/market-prices", Component: MarketPrices },
+  { path: "gold-efficiency", Component: GoldEfficiency },
 ];
 
 const darkTheme: ThemeOptions = createTheme({

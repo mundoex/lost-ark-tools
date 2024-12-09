@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { Box, TextField } from "@mui/material";
+import { BASE_URL } from "../../common/consts";
+
+const images=[
+  `${BASE_URL}helm.png`,
+  `${BASE_URL}body.png`,
+  `${BASE_URL}shoulder.png`,
+  `${BASE_URL}legs.png`,
+  `${BASE_URL}gloves.png`,
+  `${BASE_URL}weapon.png`,
+];
 
 export function ItemLeverCalculator() {
-  const images=['./helm.png','./shoulder.png','./body.png',
-    './legs.png','./gloves.png','./weapon.png'
-  ];
   const [itemLevels, setItemLevels]=useState(new Array(6).fill(0));
   const totalItemLevel = itemLevels.reduce((a, b) => (a += b)) / itemLevels.length;
   const onChangeItemLevel=(index:number, e: React.ChangeEvent<HTMLInputElement| HTMLTextAreaElement>)=>{

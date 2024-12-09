@@ -3,6 +3,7 @@ import { styled } from '@mui/system';
 export const GoldImage=styled("img")({
     verticalAlign:"middle",
     padding: "4px",
+    width:"25px"
 });
 
 export const MaterialImage=styled("img")({

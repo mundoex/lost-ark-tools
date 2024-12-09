@@ -11,30 +11,9 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
-import { MaterialsEnum, RAIDS_INFO } from "../../common/consts";
+import {  ItemsList, RAIDS_INFO } from "../../common/consts";
 import InfoIcon from "@mui/icons-material/Info";
 import { GoldImage, InputElement, MaterialImage } from "./styles";
-import {
-  AGRIS_SCALE_SRC,
-  ALCAONE_EYE_SRC,
-  ARGOS_BLOOD_SRC,
-  BEHEMOTH_SCALE_SRC,
-  CLEAR_ENERGY_OF_WISDOM_SRC,
-  COVETOUS_WING_SRC,
-  DARK_FIRE_SRC,
-  DEMON_BEAST_BONE_SRC,
-  ELIXIR_SRC,
-  EMPYREAN_CONTEMPLATION_SRC,
-  EYE_OF_DECAY_SRC,
-  GOLD_IMAGE_SRC,
-  HELLFIRE_KEYSTONE_SRC,
-  LIGHTS_TRIAL_SRC,
-  MAGICAL_SPRING_WATER_SRC,
-  MAYHEM_HORN_SRC,
-  PHANTOM_INTENTION_SRC,
-  SPLENDID_ENERGY_OF_WISDOM_SRC,
-  SUNSET_SCALE_SRC,
-} from "../../assets/images-src";
 import {
   FormControlLabel,
   FormGroup,
@@ -50,28 +29,7 @@ import {
   RaidsInfoProvider,
 } from "../../context/RaidInfoContext";
 import { useContext, useState } from "react";
-
-const IMAGES_NAME_MAP = {
-  [MaterialsEnum.SUNSET_SCALE]: { src: SUNSET_SCALE_SRC },
-  [MaterialsEnum.ARGOS_BLOOD]: { src: ARGOS_BLOOD_SRC },
-  [MaterialsEnum.DEMON_BEAST_BONE]: { src: DEMON_BEAST_BONE_SRC },
-  [MaterialsEnum.COVETOUS_WING]: { src: COVETOUS_WING_SRC },
-  [MaterialsEnum.MAYHEM_HORN]: { src: MAYHEM_HORN_SRC },
-  [MaterialsEnum.PHANTOM_INTENTION]: { src: PHANTOM_INTENTION_SRC },
-  [MaterialsEnum.LIGHTS_TRIAL]: { src: LIGHTS_TRIAL_SRC },
-  [MaterialsEnum.EMPYREAN_CONTEMPLATION]: { src: EMPYREAN_CONTEMPLATION_SRC },
-  [MaterialsEnum.EYE_OF_DECAY]: { src: EYE_OF_DECAY_SRC },
-  [MaterialsEnum.CLEAR_ENERGY_OF_WISDOM]: { src: CLEAR_ENERGY_OF_WISDOM_SRC },
-  [MaterialsEnum.CLEAR_ELIXIR_OF_WISDOM]: { src: ELIXIR_SRC },
-  [MaterialsEnum.SPLENDID_ENERGY_OF_WISDOM]: { src: SPLENDID_ENERGY_OF_WISDOM_SRC },
-  [MaterialsEnum.SPLENDID_ELIXIR_OF_WISDOM]: { src: ELIXIR_SRC },
-  [MaterialsEnum.DARK_FIRE]: { src: DARK_FIRE_SRC },
-  [MaterialsEnum.MAGICAL_SPRING_WATER]: { src: MAGICAL_SPRING_WATER_SRC },
-  [MaterialsEnum.AGRIS_SCALE]: { src: AGRIS_SCALE_SRC },
-  [MaterialsEnum.ALCAONE_EYE]: { src: ALCAONE_EYE_SRC },
-  [MaterialsEnum.BEHEMOTH_SCALE]: { src: BEHEMOTH_SCALE_SRC },
-  [MaterialsEnum.HELLFIRE_KEYSTONE]: { src: HELLFIRE_KEYSTONE_SRC },
-};
+import { ItemEnum } from "../../common/ItemEnum";
 
 interface HeadCell {
   disablePadding: boolean;
@@ -192,7 +150,7 @@ function RaidInfoComponent() {
             <Tab
               disabled
               label={totalGold}
-              icon={<GoldImage src={GOLD_IMAGE_SRC} alt="Gold" />}
+              icon={<GoldImage src={ItemsList[ItemEnum.GOLD].image} alt="Gold" />}
               iconPosition="end"
               style={{ color: "#1976d2" }}
             ></Tab>
@@ -212,7 +170,7 @@ function RaidInfoComponent() {
             />
             <div style={{ color: "#1976d2", alignSelf: "center" }}>
               {context.getCurrentPresetTotalGold(rows, currentTab)}
-              <GoldImage src={GOLD_IMAGE_SRC} alt="Gold" />
+              <GoldImage src={ItemsList[ItemEnum.GOLD].image} alt="Gold" />
             </div>
             <FormGroup>
               <FormControlLabel
@@ -305,7 +263,7 @@ function TotalGoldTooltip(props: TotalGoldTooltipProps) {
       alignItems="center"
     >
       {props.totalGold}
-      <GoldImage src={GOLD_IMAGE_SRC} alt="Gold" />
+      <GoldImage src={ItemsList[ItemEnum.GOLD].image} alt="Gold" />
     </Box>
   );
 }
@@ -412,7 +370,7 @@ function RaidsTable(props: RaidsTableProps) {
                         style={{ color: "#1976d2", textAlign: "center" }}
                       >
                         {row.gold}
-                        <GoldImage src={GOLD_IMAGE_SRC} alt="Gold" />
+                        <GoldImage src={ItemsList[ItemEnum.GOLD].image} alt="Gold" />
                       </TableCell>
                       <TableCell align="right">
                         <div
@@ -424,13 +382,10 @@ function RaidsTable(props: RaidsTableProps) {
                           }}
                         >
                           {row.materials.map((mat, i) => {
-                            const key =
-                              mat.name as keyof typeof IMAGES_NAME_MAP;
-
                             return (
-                              <div key={`rewards${row.name}${key}${i}`}>
+                              <div key={`rewards${row.name}${i}`}>
                                 <MaterialImage
-                                  src={IMAGES_NAME_MAP[key]?.src}
+                                  src={ItemsList[mat.name as ItemEnum].image}
                                   alt={mat.name}
                                 />
                                 x{mat.quantity}
@@ -451,16 +406,13 @@ function RaidsTable(props: RaidsTableProps) {
                         >
                           <div style={{ color: "#fb0000c4" }}>
                             -{row.boxes.gold}
-                            <GoldImage src={GOLD_IMAGE_SRC} alt="Gold" />
+                            <GoldImage src={ItemsList[ItemEnum.GOLD].image} alt="Gold" />
                           </div>
                           {row.boxes.materials.map((mat, i) => {
-                            const key =
-                              mat.name as keyof typeof IMAGES_NAME_MAP;
-
                             return (
-                              <div key={`Box${row.name}${key}${i}`}>
+                              <div key={`Box${row.name}${i}`}>
                                 <MaterialImage
-                                  src={IMAGES_NAME_MAP[key]?.src}
+                                  src={ItemsList[mat.name as ItemEnum].image}
                                   alt={mat.name}
                                 />
                                 x{mat.quantity}
@@ -480,12 +432,10 @@ function RaidsTable(props: RaidsTableProps) {
                           }}
                         >
                           {row?.bidBox?.map((mat, i) => {
-                            const key =
-                              mat.name as keyof typeof IMAGES_NAME_MAP;
                             return (
-                              <div key={`bidbox${row.name}${key}${i}`}>
+                              <div key={`bidbox${row.name}${i}`}>
                                 <MaterialImage
-                                  src={IMAGES_NAME_MAP[key]?.src}
+                                  src={ItemsList[mat.name as ItemEnum].image}
                                   alt={mat.name}
                                 />
                                 x{mat.quantity}

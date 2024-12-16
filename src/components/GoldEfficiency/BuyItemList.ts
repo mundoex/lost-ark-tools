@@ -209,7 +209,7 @@ const trans_ticket_expert_token:BuyItem={
     type: BuyItemType.NORMAL,
     cost: { item: ItemEnum.EXPERT_TOKEN, quantity: 5 },
     rewards: [
-        { item: ItemEnum.TRANSCENDENCE_TICKET_ARMOR, quantity: 5 },
+        { item: ItemEnum.TRANSCENDENCE_TICKET_ARMOR, quantity: 1 },
     ],
 };
 
@@ -217,7 +217,7 @@ const gold_bar_bound_expert_token:BuyItem={
     type: BuyItemType.NORMAL,
     cost: { item: ItemEnum.EXPERT_TOKEN, quantity: 10 },
     rewards: [
-        { item: ItemEnum.GOLD_BAR_BOUND, quantity: 7 },
+        { item: ItemEnum.GOLD_BAR_BOUND, quantity: 1 },
     ],
 };
 

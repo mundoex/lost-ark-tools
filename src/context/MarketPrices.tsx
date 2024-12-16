@@ -48,6 +48,8 @@ const DEFAULT_ITEMS: MarketPriceData[] = [
     {name: ItemEnum.RELIC_ENGRAVING, price: 0},
     {name: ItemEnum.LEGENDARY_ENGRAVING, price: 0},
     {name: ItemEnum.GOLD_BAR_BOUND, price: 1000},
+    {name: ItemEnum.TRANSCENDENCE_TICKET_ARMOR, price: 950},
+    {name: ItemEnum.TRANSCENDENCE_TICKET_WEAPON, price: 2500},
 ];
 
 export const MarketPricesContext=createContext<IMarketPriceContext>({

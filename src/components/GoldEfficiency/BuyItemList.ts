@@ -205,6 +205,22 @@ const relic_book_expert_token:BuyItem={
     ],
 };
 
+const trans_ticket_expert_token:BuyItem={
+    type: BuyItemType.NORMAL,
+    cost: { item: ItemEnum.EXPERT_TOKEN, quantity: 5 },
+    rewards: [
+        { item: ItemEnum.TRANSCENDENCE_TICKET_ARMOR, quantity: 1 },
+    ],
+};
+
+const gold_bar_bound_expert_token:BuyItem={
+    type: BuyItemType.NORMAL,
+    cost: { item: ItemEnum.EXPERT_TOKEN, quantity: 10 },
+    rewards: [
+        { item: ItemEnum.GOLD_BAR_BOUND, quantity: 1 },
+    ],
+};
+
 const red_1_solo_token:BuyItem={
     type: BuyItemType.SELECTOR,
     cost: { item: ItemEnum.SOLO_TOKEN, quantity: 20 },
@@ -286,6 +302,8 @@ export const BuyItemList = [
     solars_sylmael_120,
 
     relic_book_expert_token,
+    trans_ticket_expert_token,
+    gold_bar_bound_expert_token,
     solars_expert_token,
     shards_expert_token,
     blue_selector_expert_token,

@@ -81,8 +81,8 @@ export const ItemsList: Record<ItemEnum, ItemRecord> = {
     [ItemEnum.HELLFIRE_KEYSTONE]: { image: `${BASE_URL}hellfire_keystone.webp` },
 
     //other
-    [ItemEnum.TRANSCENDENCE_TICKET_WEAPON]: { image: `${BASE_URL}transcendence_ticket_weapon.webp` },
-    [ItemEnum.TRANSCENDENCE_TICKET_ARMOR]: { image: `${BASE_URL}transcendence_ticket_armor.webp` },
+    [ItemEnum.TRANSCENDENCE_TICKET_WEAPON]: { image: `${BASE_URL}trans_ticket_weapon.png` },
+    [ItemEnum.TRANSCENDENCE_TICKET_ARMOR]: { image: `${BASE_URL}trans_ticket_armor.png` },
     [ItemEnum.CLEAR_MEDAL]: { image: `${BASE_URL}clear_medal.webp` },
     [ItemEnum.SYLMAEL_BLOODSTONE]: { image: `${BASE_URL}sylmael_bloodstone.webp` },
     [ItemEnum.EXPERT_TOKEN]: { image: `${BASE_URL}expert_token.png` },

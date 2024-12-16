@@ -8,8 +8,8 @@ const limits = [
     { start: 0, end: 3, categoryName:"Raids" },
     { start: 3, end: 13, categoryName:"Guild T4" },
     { start: 13, end: 16, categoryName:"Guild T3" },
-    { start: 16, end: 22, categoryName:"Expert Shop" },
-    { start: 22, end: 27, categoryName:"Solo Shop" },
+    { start: 16, end: 24, categoryName:"Expert Shop" },
+    { start: 24, categoryName:"Solo Shop" },
 ];
 
 function GoldEfficiencyComponent() {

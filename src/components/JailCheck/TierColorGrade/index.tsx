@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { TIER_COLORS } from "../../../common/consts";
+import { TIER_COLORS } from "../../../constants/Other";
 
 const letters = ["A", "B", "C", "D", "E"];
 

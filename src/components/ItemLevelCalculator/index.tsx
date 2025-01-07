@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, TextField } from "@mui/material";
-import { BASE_URL } from "../../common/consts";
+import { BASE_URL } from "../../constants";
 
 const images=[
   `${BASE_URL}helm.png`,

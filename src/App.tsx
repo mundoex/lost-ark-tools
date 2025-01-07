@@ -6,7 +6,7 @@ import { RaidsInfo } from "./components/RaidsInfo";
 import { AppGrid } from "./components/AppGrid";
 import { CustomAppBar } from "./components/CustomAppBar";
 import { JailCheck } from "./components/JailCheck";
-import { MarketPrices } from "./components/MarketPrices";
+import { MarketPrices } from "./components/GoldEfficiency/components/MarketPrices";
 import { GoldEfficiency } from "./components/GoldEfficiency";
 
 const routesObj = [
@@ -15,7 +15,7 @@ const routesObj = [
   { path: "/raids-gold", Component: RaidsInfo },
   { path: "/jail-check", Component: JailCheck },
   { path: "/market-prices", Component: MarketPrices },
-  { path: "gold-efficiency", Component: GoldEfficiency },
+  { path: "/gold-efficiency", Component: GoldEfficiency },
 ];
 
 const darkTheme: ThemeOptions = createTheme({

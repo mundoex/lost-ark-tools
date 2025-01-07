@@ -16,7 +16,7 @@ export enum ItemEnum {
     REFINED_PROTECTION_STONE = "Refined Protection Stone",
     REFINED_OBLITERATION_STONE = "Refined Obliteration Stone",
     RADIANT_HONOR_LEAPSTONE = "Radiant Honor Leapstone",
-    HONOR_SHARD = "HONOR Shard",
+    HONOR_SHARD = "Honor Shard",
     HONOR_SHARD_POUCH_S = "Honor Shard Pouch S",
     HONOR_SHARD_POUCH_M = "Honor Shard Pouch M",
     HONOR_SHARD_POUCH_L = "Honor Shard Pouch L",
@@ -31,6 +31,11 @@ export enum ItemEnum {
     OBLITERATION_STONE = "Obliteration Stone",
     MARVELOUS_HONOR_LEAPSTONE = "Marvelous Honor Leapstone",
     SUPERIOR_OREHA_FUSION_MATERIAL = "Superior Oreha Fusion Material",
+
+    CRYSTALLIZED_GUARDIAN_STONE = "Crystallized Guardian Stone",
+    CRYSTALLIZED_DESTRUCTION_STONE = "Crystallized Destruction Stone",
+    GREAT_HONOR_LEAPSTONE = "Great Honor Leapstone",
+    OREHA_FUSION_MATERIAL = "Oreha Fusion Material",
 
     SOLAR_GRACE = "Solar Grace",
     SOLAR_BLESSING = "Solar Blessing",
@@ -62,6 +67,7 @@ export enum ItemEnum {
     EXPERT_TOKEN = "Expert Token",
     SOLO_TOKEN = "Solo Token",
     BLUE_CRYSTAL = "Blue Crystal",
+    PHEON = "Pheon",
     GOLD = "Gold",
 
     ABILITY_STONE = "Ability Stone",

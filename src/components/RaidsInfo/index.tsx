@@ -11,7 +11,6 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
-import {  ItemsList, RAIDS_INFO } from "../../common/consts";
 import InfoIcon from "@mui/icons-material/Info";
 import { GoldImage, InputElement, MaterialImage } from "./styles";
 import {
@@ -23,20 +22,15 @@ import {
   TextField,
   Tooltip,
 } from "@mui/material";
-import { RaidsInfoTableData } from "../../common/RaidsInfoTableData";
 import {
   RaidsInfoContext,
   RaidsInfoProvider,
 } from "../../context/RaidInfoContext";
 import { useContext, useState } from "react";
-import { ItemEnum } from "../../common/ItemEnum";
-
-interface HeadCell {
-  disablePadding: boolean;
-  id: string;
-  label: string;
-  numeric: boolean;
-}
+import { ItemEnum } from "../../common/Items/ItemEnum";
+import { RAIDS_INFO } from "../../constants/RaidsInfo";
+import { HeadCell, RaidsInfoTableData } from "./types";
+import { ItemsList } from "../../constants/ItemList";
 
 const headCells: readonly HeadCell[] = [
   {
@@ -75,15 +69,13 @@ const rows: RaidsInfoTableData[] = RAIDS_INFO.reduce((acc, cur) => {
   cur.gates.forEach((gateInfo, i) => {
     const d: RaidsInfoTableData = {
       name: `${cur.name} Gate ${i + 1}`,
-      gold: gateInfo.rewards.gold,
       itemLevel: gateInfo.itemLevelRequired,
-      materials: gateInfo.rewards.materials,
-      boxes: gateInfo.box,
+      gold: gateInfo.rewards.gold,
+      extraRewardsGold: gateInfo.extraRewards.gold,
+      materials: gateInfo.rewards.materialRewards,
+      extraRewardsMaterials: gateInfo.extraRewards.materialRewards,
       bidBox: gateInfo?.bidBox,
-      totalRaidGold: cur.gates.reduce(
-        (acc2, cur2) => (acc2 += cur2.rewards.gold),
-        0
-      ),
+      totalRaidGold: cur.gates.reduce((acc2, cur2) => (acc2 += cur2.rewards.gold), 0),
     };
     acc.push(d);
   });
@@ -405,10 +397,10 @@ function RaidsTable(props: RaidsTableProps) {
                           }}
                         >
                           <div style={{ color: "#fb0000c4" }}>
-                            -{row.boxes.gold}
+                            -{row.extraRewardsGold}
                             <GoldImage src={ItemsList[ItemEnum.GOLD].image} alt="Gold" />
                           </div>
-                          {row.boxes.materials.map((mat, i) => {
+                          {row.extraRewardsMaterials.map((mat, i) => {
                             return (
                               <div key={`Box${row.name}${i}`}>
                                 <MaterialImage

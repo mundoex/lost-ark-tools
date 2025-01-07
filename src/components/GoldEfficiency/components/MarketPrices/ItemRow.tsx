@@ -1,10 +1,10 @@
 
 import { Box, TextField, Typography } from "@mui/material";
-import { MarketPriceData } from "../../common/MarketPriceData";
-import { MarketPricesContext } from "../../context/MarketPrices";
+import { MarketPriceData } from "../../../../common/Market/MarketPriceData";
+import { MarketPricesContext } from "../../../../context/MarketPrices";
 import { useContext } from "react";
-import { ItemsList } from "../../common/consts";
-import { ItemEnum } from "../../common/ItemEnum";
+import { ItemEnum } from "../../../../common/Items/ItemEnum";
+import { ItemsList } from "../../../../constants/ItemList";
 
 export function ItemRow(item: MarketPriceData) {  
   const bundleString = item.bundleSize ? `x${item.bundleSize}` : '';

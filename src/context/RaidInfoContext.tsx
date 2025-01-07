@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import { RaidsInfoTableData } from "../common/RaidsInfoTableData";
 import usePersistedState from "@utilityjs/use-persisted-state";
+import { RaidsInfoTableData } from "../components/RaidsInfo/types";
 
 const RAIDS_INFO_PRESETS_SAVE_KEY="raidsInfoPresetsKey";
 const RAIDS_INFO_OTHER_SAVE_KEY="raidsInfoOtherKey";

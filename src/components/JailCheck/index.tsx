@@ -10,17 +10,17 @@ import {
 import { useEffect, useState } from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { CLASS_ICON_MAP } from "../../assets/images-src";
-import { EncounterData } from "../../common/EncounterData";
-import { EntityStats } from "../../common/EntityStats";
-import { EntityStatsPlus } from "../../common/EntityStatsPlus";
-import { Entity } from "../../common/Entity";
-import { GemType } from "../../common/GemType";
+import { EncounterData } from "../../common/Meter/EncounterData";
+import { EntityStats } from "../../common/Meter/EntityStats";
+import { EntityStatsPlus } from "../../common/Meter/EntityStatsPlus";
+import { Entity } from "../../common/Meter/Entity";
+import { GemType } from "../../common/Meter/GemType";
 import { BASE_LOGS_API_URL, useLogsApiFunctionsForUrl } from "./api";
-import { PARTY_COLORS, SUPPORTS_CLASS_NAMES } from "../../common/consts";
-import { useDebounce } from "../../common/useDebounce";
+import { useDebounce } from "../../hooks/useDebounce";
 import { EntityDataGrid } from "./EntityDataGrid";
 import usePersistedState from "@utilityjs/use-persisted-state";
 import { SnackbarProvider, useSnackbar } from 'notistack';
+import { PARTY_COLORS, SUPPORTS_CLASS_NAMES } from "../../constants/Other";
 
 const API_URL_SAVE_KEY = "apiUrlSaveKey"
 

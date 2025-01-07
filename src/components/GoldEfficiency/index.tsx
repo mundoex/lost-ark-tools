@@ -1,38 +1,40 @@
-import { Box, Checkbox, FormControlLabel, Grid, Typography } from "@mui/material";
-import { MarketPricesProvider } from "../../context/MarketPrices";
-import { BuyItemList } from "./BuyItemList";
-import { BuyItemBox } from "./BuyItemBox";
 import { useState } from "react";
-
-const limits = [
-    { start: 0, end: 3, categoryName:"Raids" },
-    { start: 3, end: 13, categoryName:"Guild T4" },
-    { start: 13, end: 16, categoryName:"Guild T3" },
-    { start: 16, end: 24, categoryName:"Expert Shop" },
-    { start: 24, categoryName:"Solo Shop" },
-];
+import { Box, Checkbox, FormControlLabel, Tab, Tabs } from "@mui/material";
+import {  MarketPricesProvider } from "../../context/MarketPrices";
+import { ExpertShopExchangeShopGrid, GuildExchangeShopGrid, RaidExchangeShopGrid, SoloShopExchangeShopGrid } from "./components/ExchangeShopGrid";
+import { MarketPrices } from "./components/MarketPrices";
+import MariShop from "./components/MariShop";
+import { RaidsExtraRewards } from "./components/RaidExtraRewards";
+import { SoloRaidValue } from "./components/SoloRaidValue";
+import { GuardianValue } from "./components/GuardianValue";
 
 function GoldEfficiencyComponent() {
     const [checked, setChecked] = useState(false);
+    const [currentTab, setCurrentTab] = useState(0);
+
+    const TabsData = [
+        {label:"Market Prices", component: <MarketPrices/>},
+        {label:"Raids Exchange", component: <RaidExchangeShopGrid needShards={checked}/>},
+        {label: "Guild Exchange", component: <GuildExchangeShopGrid needShards={checked}/>},
+        {label: "Solo Exchange", component: <SoloShopExchangeShopGrid needShards={checked}/>},
+        {label: "Expert Shop", component: <ExpertShopExchangeShopGrid needShards={checked}/>},
+        {label: "Mari's Shop", component: <MariShop/>},
+        {label: "Extra Rewards", component: <RaidsExtraRewards needShards={checked}/>},
+        {label: "Solo Raid Value", component: <SoloRaidValue needShards={checked}/>},
+        {label: "Guardian Value", component: <GuardianValue/>},
+    ];
+
     return <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <FormControlLabel
             label="Need Shards"
             sx={{ alignSelf: "center", textAlign: "center" }}
             control={<Checkbox checked={checked} onClick={() => setChecked(!checked)} />}
         />
-        <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-            {limits.map(({start, end, categoryName},i) => {
-                return <Box key={`${categoryName}${i}`} sx={{ display: 'flex', flexDirection: 'column' }}>
-                <Typography variant="body2" sx={{ fontWeight: 'bold', alignSelf:"center"}}>
-                    {categoryName}
-                </Typography>
-                    {[...BuyItemList].slice(start, end).map((entry, i) => {
-                        return <Grid key={i} sx={{ margin: 0.5 }}>
-                             <BuyItemBox key={`${entry.cost}${i}`} buyItem={entry} needShards={checked} />
-                         </Grid>
-                    })}
-                </Box>
-            })}
+        <Tabs value={currentTab} onChange={(_, value) => setCurrentTab(value)}>
+            {TabsData.map(({ label }, i) => <Tab key={`${label}${i}`} label={label} />)}
+        </Tabs>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignSelf: 'center', width: 'fit-content', marginTop: "10px" }}>
+            {TabsData[currentTab].component}
         </Box>
     </Box>
 }

@@ -1,12 +1,13 @@
-import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { AppBar, Toolbar, Box, Typography } from "@mui/material";
+
+const menuItems = ["Home", "Maxroll", "Lost Ark Nexus"];
+const links = ["https://maxroll.gg/lost-ark", "https://www.lostark.nexus/"];
 
 export function CustomAppBar() {
   const navigate = useNavigate();
-  const menuItems = ["Home", "Maxroll", "Lost Ark Nexus"];
-  const links = ["https://maxroll.gg/lost-ark", "https://www.lostark.nexus/"];
 
-  const onClickMenuItem = (item:string)=>{
+  const onClickMenuItem = (item: string) => {
     switch (item) {
       case "Maxroll":
         window.open(links[0], "_blank");
@@ -18,8 +19,8 @@ export function CustomAppBar() {
       default:
         navigate("/");
         break;
+    }
   }
-}
 
   return (
     <AppBar position="static" sx={{ bgcolor: 'black', boxShadow: 'none' }}>
@@ -28,7 +29,7 @@ export function CustomAppBar() {
           {menuItems.map((item, index) => (
             <Box
               key={index}
-              onClick={()=>onClickMenuItem(item)}
+              onClick={() => onClickMenuItem(item)}
               sx={{
                 position: 'relative',
                 display: 'flex',

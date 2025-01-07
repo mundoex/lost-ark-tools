@@ -1,7 +1,7 @@
 import axios from "axios";
-import { LogsFilter } from "../../common/LogsFilter";
-import { EncounterLog } from "../../common/EncounterLog";
-import { EncounterData } from "../../common/EncounterData";
+import { LogsFilter } from "../../common/Meter/LogsFilter";
+import { EncounterData } from "../../common/Meter/EncounterData";
+import { EncounterLog } from "../../common/Meter/EncounterLog";
 
 export const BASE_LOGS_API_URL="https://api.snow.xyz/logs"
 let LOGS_URL = BASE_LOGS_API_URL;

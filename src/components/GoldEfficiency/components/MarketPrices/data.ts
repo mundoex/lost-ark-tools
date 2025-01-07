@@ -1,0 +1,55 @@
+import { ItemEnum } from "../../../../common/Items/ItemEnum";
+
+export const MarketPriceDataBlocks = [
+    {
+        name: "T4 Materials",
+        names: [
+            ItemEnum.DESTINY_GUARDIAN_STONE,
+            ItemEnum.DESTINY_DESTRUCTION_STONE,
+            ItemEnum.DESTINY_LEAPSTONE,
+            ItemEnum.DESTINY_SHARD_POUCH_S,
+            ItemEnum.DESTINY_SHARD_POUCH_M,
+            ItemEnum.DESTINY_SHARD_POUCH_L,
+            ItemEnum.GLACIERS_BREATH,
+            ItemEnum.LAVAS_BREATH,
+            ItemEnum.ABIDOS_FUSION_MATERIAL,
+            ItemEnum.METALLURGY_HELLFIRE_11_14,
+            ItemEnum.TAILORING_HELLFIRE_11_14,
+        ],
+    },
+    {
+        name: "T3 Materials",
+        names: [
+            ItemEnum.REFINED_PROTECTION_STONE,
+            ItemEnum.REFINED_OBLITERATION_STONE,
+            ItemEnum.PROTECTION_STONE,
+            ItemEnum.OBLITERATION_STONE,
+            ItemEnum.RADIANT_HONOR_LEAPSTONE,
+            ItemEnum.MARVELOUS_HONOR_LEAPSTONE,
+            ItemEnum.PRIME_OREHA_FUSION_MATERIAL,
+            ItemEnum.SUPERIOR_OREHA_FUSION_MATERIAL,
+            ItemEnum.OREHA_FUSION_MATERIAL,
+            ItemEnum.HONOR_SHARD_POUCH_S,
+            ItemEnum.HONOR_SHARD_POUCH_M,
+            ItemEnum.HONOR_SHARD_POUCH_L,
+            ItemEnum.SOLAR_GRACE,
+            ItemEnum.SOLAR_BLESSING,
+            ItemEnum.SOLAR_PROTECTION,
+            ItemEnum.TAILORING_DECAY_13_15,
+            ItemEnum.TAILORING_DECAY_16_19,
+            ItemEnum.METALLURGY_DECAY_16_19,
+            ItemEnum.METALLURGY_DECAY_13_15,
+        ],
+    },
+    {
+        name: "Other",
+        names: [
+            ItemEnum.BLUE_CRYSTAL,
+            ItemEnum.RELIC_ENGRAVING,
+            ItemEnum.LEGENDARY_ENGRAVING,
+            ItemEnum.GOLD_BAR_BOUND,
+            ItemEnum.TRANSCENDENCE_TICKET_ARMOR,
+            ItemEnum.TRANSCENDENCE_TICKET_WEAPON,
+        ],
+    },
+];

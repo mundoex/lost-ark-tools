@@ -2,9 +2,9 @@ import { Box, Grid, Typography, Avatar } from "@mui/material";
 import { CLASS_ICON_MAP } from "../../../assets/images-src";
 import { formatNumber } from "../../../utils/utils";
 import { TierColorGrade } from "../TierColorGrade";
-import { TIER_COLORS } from "../../../common/consts";
-import { EntityStatsPlus } from "../../../common/EntityStatsPlus";
+import { EntityStatsPlus } from "../../../common/Meter/EntityStatsPlus";
 import { BASE_LOGS_API_URL } from "../api";
+import { TIER_COLORS } from "../../../constants/Other";
 
 //A B C D E
 const gapTier=[55, 65, 75, 85, 95];

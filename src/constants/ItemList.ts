@@ -93,4 +93,12 @@ export const ItemsList: Record<ItemEnum, ItemRecord> = {
     [ItemEnum.SOLO_TOKEN]: { image: `${BASE_URL}solo_token.png` },
     [ItemEnum.PHEON]: { image: `${BASE_URL}pheon.png` },
     [ItemEnum.SHADOW_OF_KARMA]: { image: `${BASE_URL}shadow_of_karma.png` },
+
+    [ItemEnum.TIER_3_GEM_LVL_1]: { image: `${BASE_URL}tier3_gem_lvl_1.png` },
+    [ItemEnum.TIER_3_GEM_LVL_5]: { image: `${BASE_URL}tier3_gem_lvl_5.png` },
+    [ItemEnum.TIER_3_GEM_LVL_7]: { image: `${BASE_URL}tier3_gem_lvl_7.png` },
+
+    [ItemEnum.TIER_4_GEM_LVL_1]: { image: `${BASE_URL}tier4_gem_lvl_1.png` },
+    [ItemEnum.TIER_4_GEM_LVL_5]: { image: `${BASE_URL}tier4_gem_lvl_5.png` },
+    [ItemEnum.TIER_4_GEM_LVL_7]: { image: `${BASE_URL}tier4_gem_lvl_7.png` },
 };

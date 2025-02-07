@@ -60,3 +60,7 @@ export function convertToT4(itemQuantityArr:ItemQuantity[]): ItemQuantity[] {
 
     return !found ? items : convertToT4(items);
 }
+
+export function gemToLvl1s(gemLvl:number):number{
+    return Math.pow(3, gemLvl-1)
+}

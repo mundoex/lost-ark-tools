@@ -8,6 +8,7 @@ import { CustomAppBar } from "./components/CustomAppBar";
 import { JailCheck } from "./components/JailCheck";
 import { MarketPrices } from "./components/GoldEfficiency/components/MarketPrices";
 import { GoldEfficiency } from "./components/GoldEfficiency";
+import { CubeAndGems } from "./components/CubeAndGems";
 
 const routesObj = [
   { path: "", Component: AppGrid },
@@ -16,6 +17,7 @@ const routesObj = [
   { path: "/jail-check", Component: JailCheck },
   { path: "/market-prices", Component: MarketPrices },
   { path: "/gold-efficiency", Component: GoldEfficiency },
+  { path: "/cubes-and-gems", Component: CubeAndGems },
 ];
 
 const darkTheme: ThemeOptions = createTheme({

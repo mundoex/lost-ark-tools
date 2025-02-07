@@ -66,6 +66,13 @@ export function AppGrid() {
       external: false,
       onClick: () => navigate("/gold-efficiency")
     },
+    {
+      imagePath: ItemsList[ItemEnum.TIER_4_GEM_LVL_7].image,
+      title: "Cubes & Gems (BETA)",
+      subtitle: "Cube & Gems maths Beta version",
+      external: false,
+      onClick: () => navigate("/cubes-and-gems")
+    },
   ];
 
   return (

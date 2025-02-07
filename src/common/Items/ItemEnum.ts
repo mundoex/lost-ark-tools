@@ -75,4 +75,12 @@ export enum ItemEnum {
     LEGENDARY_ENGRAVING = "Legendary Engraving",
     GOLD_BAR_BOUND = "Gold Bar(Bound)",
     SHADOW_OF_KARMA = "Shadow of Karma",
+
+    TIER_3_GEM_LVL_1 = "Tier 3 Gem Lvl.1",
+    TIER_3_GEM_LVL_5 = "Tier 3 Gem Lvl.5",
+    TIER_3_GEM_LVL_7 = "Tier 3 Gem Lvl.7",
+
+    TIER_4_GEM_LVL_1 = "Tier 4 Gem Lvl.1",
+    TIER_4_GEM_LVL_5 = "Tier 4 Gem Lvl.5",
+    TIER_4_GEM_LVL_7 = "Tier 4 Gem Lvl.7",
 }

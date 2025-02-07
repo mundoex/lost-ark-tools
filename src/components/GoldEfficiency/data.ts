@@ -24,6 +24,28 @@ export const breaths_behe: BuyItem = {
     bidBoxQuantity: 20,
 };
 
+export const honing_aegir: BuyItem = {
+    type: BuyItemType.CHANCE,
+    cost: { name: ItemEnum.HELLFIRE_KEYSTONE, quantity: 5 },
+    rewards: [
+        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 5 },
+        { name: ItemEnum.DESTINY_SHARD_POUCH_S, quantity: 2 },
+        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 160 },
+        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 480 },
+    ],
+    bidBoxQuantity: 5,
+};
+
+export const breaths_aegir: BuyItem = {
+    type: BuyItemType.CHANCE,
+    cost: { name: ItemEnum.HELLFIRE_KEYSTONE, quantity: 5 },
+    rewards: [
+        { name: ItemEnum.GLACIERS_BREATH, quantity: 5 },
+        { name: ItemEnum.LAVAS_BREATH, quantity: 2 },
+    ],
+    bidBoxQuantity: 10,
+};
+
 export const honing_echidna_eyes: BuyItem = {
     type: BuyItemType.CHANCE,
     cost: { name: ItemEnum.ALCAONE_EYE, quantity: 5 },
@@ -310,9 +332,9 @@ export const prime_oreha_solo_token:BuyItem={
 
 export const mari_abidos_fusion_mat:BuyItem = {
     type: BuyItemType.NORMAL,
-    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 80 },
+    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 90 },
     rewards: [
-        { name: ItemEnum.ABIDOS_FUSION_MATERIAL, quantity: 30 },
+        { name: ItemEnum.ABIDOS_FUSION_MATERIAL, quantity: 50 },
 
     ],
 };
@@ -336,7 +358,7 @@ export const mari_lava_breath_15: BuyItem = {
 
 export const mari_glacier_breath_20: BuyItem = {
     type: BuyItemType.NORMAL,
-    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 140 },
+    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 96 },
     rewards: [
         { name: ItemEnum.GLACIERS_BREATH, quantity: 20 },
     ],
@@ -344,23 +366,15 @@ export const mari_glacier_breath_20: BuyItem = {
 
 export const mari_glacier_breath_30: BuyItem = {
     type: BuyItemType.NORMAL,
-    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 190 },
+    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 124 },
     rewards: [
         { name: ItemEnum.GLACIERS_BREATH, quantity: 30 },
     ],
 };
 
-export const mari_destiny_shard_pouch_s_7: BuyItem = {
-    type: BuyItemType.NORMAL,
-    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 154 },
-    rewards: [
-        { name: ItemEnum.DESTINY_SHARD_POUCH_S, quantity: 7 },
-    ],
-};
-
 export const mari_destiny_shard_pouch_s_10: BuyItem = {
     type: BuyItemType.NORMAL,
-    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 210 },
+    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 110 },
     rewards: [
         { name: ItemEnum.DESTINY_SHARD_POUCH_S, quantity: 10 },
     ],
@@ -368,17 +382,33 @@ export const mari_destiny_shard_pouch_s_10: BuyItem = {
 
 export const mari_destiny_shard_pouch_s_15: BuyItem = {
     type: BuyItemType.NORMAL,
-    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 300 },
+    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 155 },
     rewards: [
         { name: ItemEnum.DESTINY_SHARD_POUCH_S, quantity: 15 },
     ],
 };
 
+export const mari_destiny_shard_pouch_s_20: BuyItem = {
+    type: BuyItemType.NORMAL,
+    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 190 },
+    rewards: [
+        { name: ItemEnum.DESTINY_SHARD_POUCH_S, quantity: 20 },
+    ],
+};
+
+export const mari_destiny_honor_leapstone_100: BuyItem = {
+    type: BuyItemType.NORMAL,
+    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 210 },
+    rewards: [
+        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 100 },
+    ],
+};
+
 export const mari_radiant_honor_leapstone: BuyItem = {
     type: BuyItemType.NORMAL,
-    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 220 },
+    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 150 },
     rewards: [
-        { name: ItemEnum.RADIANT_HONOR_LEAPSTONE, quantity: 80 },
+        { name: ItemEnum.RADIANT_HONOR_LEAPSTONE, quantity: 100 },
     ],
 };
 
@@ -410,6 +440,8 @@ export const RaidsBuyItemList=[
     honing_mats_behe,
     breaths_behe,
     honing_echidna_eyes,
+    honing_aegir,
+    breaths_aegir,
 ];
 
 export const GuildBuyItemList=[
@@ -458,9 +490,10 @@ export const MariShopBuyItemList=[
     mari_lava_breath_15,
     mari_glacier_breath_20,
     mari_glacier_breath_30,
-    mari_destiny_shard_pouch_s_7,
     mari_destiny_shard_pouch_s_10,
     mari_destiny_shard_pouch_s_15,
+    mari_destiny_shard_pouch_s_20,
+    mari_destiny_honor_leapstone_100,
     mari_radiant_honor_leapstone,
     mari_superior_oreha_fusion_mat_100,
     mari_superior_oreha_fusion_mat_200,

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Checkbox, FormControlLabel, Tab, Tabs } from "@mui/material";
 import {  MarketPricesProvider } from "../../context/MarketPrices";
-import { ExpertShopExchangeShopGrid, GuildExchangeShopGrid, RaidExchangeShopGrid, SoloShopExchangeShopGrid } from "./components/ExchangeShopGrid";
+import { GuildExchangeShopGrid, RaidExchangeShopGrid, SoloShopExchangeShopGrid } from "./components/ExchangeShopGrid";
 import { MarketPrices } from "./components/MarketPrices";
 import MariShop from "./components/MariShop";
 import { RaidsExtraRewards } from "./components/RaidExtraRewards";
@@ -17,7 +17,7 @@ function GoldEfficiencyComponent() {
         {label:"Raids Exchange", component: <RaidExchangeShopGrid needShards={checked}/>},
         {label: "Guild Exchange", component: <GuildExchangeShopGrid needShards={checked}/>},
         {label: "Solo Exchange", component: <SoloShopExchangeShopGrid needShards={checked}/>},
-        {label: "Expert Shop", component: <ExpertShopExchangeShopGrid needShards={checked}/>},
+        // {label: "Expert Shop", component: <ExpertShopExchangeShopGrid needShards={checked}/>},
         {label: "Mari's Shop", component: <MariShop/>},
         {label: "Extra Rewards", component: <RaidsExtraRewards needShards={checked}/>},
         {label: "Solo Raid Value", component: <SoloRaidValue needShards={checked}/>},

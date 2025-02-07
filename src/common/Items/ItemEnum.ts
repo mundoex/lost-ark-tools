@@ -74,4 +74,5 @@ export enum ItemEnum {
     RELIC_ENGRAVING = "Relic Engraving",
     LEGENDARY_ENGRAVING = "Legendary Engraving",
     GOLD_BAR_BOUND = "Gold Bar(Bound)",
+    SHADOW_OF_KARMA = "Shadow of Karma",
 }

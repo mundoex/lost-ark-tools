@@ -1704,7 +1704,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1620,
                 rewards: {
-                    gold: 5000,
+                    gold: 3500+900,
                     soloTokens: 250,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 12 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 6 }],
                     honingMatsRewards: [
@@ -1715,7 +1715,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
                     ],
                 },
                 extraRewards: {
-                    gold: 2000,
+                    gold: 1700,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 12 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 6 }],
                     honingMatsRewards: [
                         { name: ItemEnum.REFINED_OBLITERATION_STONE, quantity: 500 },
@@ -1729,7 +1729,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1620,
                 rewards: {
-                    gold: 6000,
+                    gold: 4500+1000,
                     soloTokens: 300,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 16 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 9 }],
                     honingMatsRewards: [
@@ -1740,7 +1740,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
                     ],
                 },
                 extraRewards: {
-                    gold: 2400,
+                    gold: 1900,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 16 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 9 }],
                     honingMatsRewards: [
                         { name: ItemEnum.REFINED_OBLITERATION_STONE, quantity: 600 },
@@ -1754,7 +1754,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1620,
                 rewards: {
-                    gold: 9000,
+                    gold: 7500+1400,
                     soloTokens: 500,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 24 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 12 }],
                     honingMatsRewards: [
@@ -1765,7 +1765,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
                     ],
                 },
                 extraRewards: {
-                    gold: 2800,
+                    gold: 2300,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 24 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 12 }],
                     honingMatsRewards: [
                         { name: ItemEnum.REFINED_OBLITERATION_STONE, quantity: 700 },
@@ -1780,7 +1780,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1620,
                 rewards: {
-                    gold: 21000,
+                    gold: 8000+1800,
                     soloTokens: 0,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 24 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 12 }],
                     honingMatsRewards: [
@@ -1791,7 +1791,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
                     ],
                 },
                 extraRewards: {
-                    gold: 3600,
+                    gold: 2300,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 24 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 12 }],
                     honingMatsRewards: [
                         { name: ItemEnum.REFINED_OBLITERATION_STONE, quantity: 850 },
@@ -2061,7 +2061,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1660,
                 rewards: {
-                    gold: 15500,
+                    gold: 16500,
                     soloTokens: 0,
                     materialRewards: [{ name: ItemEnum.HELLFIRE_KEYSTONE, quantity: 6 }],
                     honingMatsRewards: [
@@ -2092,7 +2092,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1680,
                 rewards: {
-                    gold: 9000,
+                    gold: 10000,
                     soloTokens: 0,
                     materialRewards: [{ name: ItemEnum.HELLFIRE_KEYSTONE, quantity: 8 }],
                     honingMatsRewards: [
@@ -2117,7 +2117,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1680,
                 rewards: {
-                    gold: 18500,
+                    gold: 20000,
                     soloTokens: 0,
                     materialRewards: [{ name: ItemEnum.HELLFIRE_KEYSTONE, quantity: 12 }],
                     honingMatsRewards: [
@@ -2138,6 +2138,118 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
                     ],
                 },
                 bidBox: [{ name: ItemEnum.HELLFIRE_KEYSTONE, quantity: 10 }],
+            },
+        ],
+    },
+    {
+        name: "Brelshaza Act2 (Normal)",
+        gates: [
+            //G1
+            {
+                itemLevelRequired: 1670,
+                rewards: {
+                    gold: 9000,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 4 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 540 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1080 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 4000 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 3800,
+                    materialRewards: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 4 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 800 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1600 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 7000 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 18 },
+                    ],
+                },
+            },
+            //G2
+            {
+                itemLevelRequired: 1670,
+                rewards: {
+                    gold: 18500,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 6 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 650 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1280 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 4600 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 5600,
+                    materialRewards: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 6 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 1050 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 2100 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 10500 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 30 },
+                    ],
+                },
+                bidBox: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 5 }],
+            },
+        ],
+    },
+    {
+        name: "Brelshaza Act2 (Hard)",
+        gates: [
+            //G1
+            {
+                itemLevelRequired: 1690,
+                rewards: {
+                    gold: 11000,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 8 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 640 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1280 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 4600 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 4500,
+                    materialRewards: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 8 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 950 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1900 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 8000 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 32 },
+                    ],
+                },
+            },
+            //G2
+            {
+                itemLevelRequired: 1690,
+                rewards: {
+                    gold: 23000,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 12 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 700 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1400 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 6000 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 7200,
+                    materialRewards: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 12 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 1400 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 2800 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 14000 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 48 },
+                    ],
+                },
+                bidBox: [{ name: ItemEnum.SHADOW_OF_KARMA, quantity: 10 }],
             },
         ],
     },

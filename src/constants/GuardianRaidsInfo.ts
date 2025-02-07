@@ -97,5 +97,29 @@ export const GUARDIANS_RAIDS_INFO: readonly RaidInfo[] = [
                 }
             }
         ]
+    },
+    {
+        name: "Skolakia",
+        gates: [
+            {
+                itemLevelRequired: 1680,
+                rewards: {
+                    gold: 0,
+                    soloTokens: 0,
+                    materialRewards: [],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 145 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 435 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 19 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 0,
+                    soloTokens: 0,
+                    materialRewards: [],
+                    honingMatsRewards: [],
+                }
+            }
+        ]
     }
 ]

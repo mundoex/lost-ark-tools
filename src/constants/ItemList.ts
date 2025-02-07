@@ -92,4 +92,5 @@ export const ItemsList: Record<ItemEnum, ItemRecord> = {
     [ItemEnum.GOLD_BAR_BOUND]: { image: `${BASE_URL}gold_bar_1k_bound.png` },
     [ItemEnum.SOLO_TOKEN]: { image: `${BASE_URL}solo_token.png` },
     [ItemEnum.PHEON]: { image: `${BASE_URL}pheon.png` },
+    [ItemEnum.SHADOW_OF_KARMA]: { image: `${BASE_URL}shadow_of_karma.png` },
 };

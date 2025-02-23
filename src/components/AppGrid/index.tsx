@@ -47,7 +47,7 @@ export function AppGrid() {
     },
     {
       imagePath: ItemsList[ItemEnum.DARK_FIRE].image,
-      title: "Jail Check",
+      title: "Jail Check(Out of Service)",
       subtitle: "Help check for jailers",
       external: false,
       onClick: () => navigate("/jail-check")
@@ -67,11 +67,18 @@ export function AppGrid() {
       onClick: () => navigate("/gold-efficiency")
     },
     {
-      imagePath: ItemsList[ItemEnum.TIER_4_GEM_LVL_7].image,
+      imagePath: ItemsList[ItemEnum.TIER_3_GEM_LVL_7].image,
       title: "Cubes & Gems (BETA)",
       subtitle: "Cube & Gems maths Beta version",
       external: false,
       onClick: () => navigate("/cubes-and-gems")
+    },
+    {
+      imagePath: ItemsList[ItemEnum.TIER_4_GEM_LVL_7].image,
+      title: "Profile Inspector",
+      subtitle: "Inspect any player character/roster",
+      external: true,
+      onClick: () => window.open('https://uwuowo.mathi.moe/', '_blank')
     },
   ];
 

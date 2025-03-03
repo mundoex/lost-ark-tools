@@ -1,9 +1,12 @@
 import { createContext } from "react";
 import usePersistedState from "@utilityjs/use-persisted-state";
-import { PlannerCharacter, PlannerPlayer, PlannerPlayersData, PlannerRaidsData, RaidPlan } from "../common/Planner/PlannerData";
+import { PlannerPlayersData, PlannerRaidsData } from "../common/Planner/PlannerData";
 import { DaysOfWeek } from "../common/Planner/DaysOfWeek";
 import { RAIDS_INFO } from "../constants/RaidsInfo";
 import { GUARDIANS_RAIDS_INFO } from "../constants/GuardianRaidsInfo";
+import { PlannerCharacter } from "../common/Planner/PlannerCharacter";
+import { PlannerPlayer } from "../common/Planner/PlannerPlayer";
+import { RaidPlan } from "../common/Planner/RaidPlan";
 
 const PLANNER_RAIDS_SAVE_KEY="plannerRaidsSaveKey";
 const PLANNER_PLAYERS_SAVE_KEY="plannerPlayersSaveKey";
@@ -43,45 +46,6 @@ interface IPlannerContext{
     setRaidPlanPlayer:(planIndex:number, partyIndex:number, partySlotIndex:number, playerName:string)=>void;
     setRaidPlanChar:(planIndex:number, partyIndex:number, partySlotIndex:number, playerChar:string)=>void;
 }
-
-// const testData:RaidPlan[] = [
-//     {
-//         raidName: "Aegir (Normal)",
-//         raidIndex: 1,
-//         dayOfWeek: "Wednesday" as DaysOfWeek,
-//         time: "20:10",
-//         checked:false,
-//         parties: [
-//             [
-//                 { name: "Mundo Ex", charName: "Mundoexlshadowhu" },
-//                 { name: "Addict", charName: "Sixaddict" },
-//                 { name: "Rain", charName: "Ladyoftheshadow" },
-//                 { name: "Clumsy", charName: "Klomso" },
-//             ],
-//             [],
-//         ]
-//     },
-//     {
-//         raidName: "Behemoth",
-//         raidIndex: 2,
-//         dayOfWeek: "Wednesday" as DaysOfWeek,
-//         time: "21:10",
-//         checked:false,
-//         parties: [
-//             [
-//                 { name: "Mundo Ex", charName: "Mundoexlshadowhu" },
-//                 { name: "Addict", charName: "Sixaddict" },
-//                 { name: "Rain", charName: "Ladyoftheshadow" },
-//                 { name: "Clumsy", charName: "Klomso" }
-//             ],
-//             [
-//                 { name: "Yulina", charName: "Yuuphia" },
-//             ],
-//             [],
-//             [],
-//         ]
-//     }
-// ];
 
 export const PlannerContext=createContext<IPlannerContext>({
     playersPlannerData: {

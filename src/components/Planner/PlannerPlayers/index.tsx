@@ -4,13 +4,14 @@ import { PlannerContext } from "../../../context/PlannerContext";
 import { Box, Button, Card, CardContent, CardMedia, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography, useTheme } from "@mui/material";
 import { HexColorPicker } from "react-colorful";
 import { CLASS_ICON_MAP } from "../../../assets/images-src";
-import { BASE_URL, getRosterImportData } from "../api";
+import { getRosterImportData } from "../api";
 import { formatRosterImportData, getHighestItemLevelCharacter } from "../other";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { ArrowBack } from "@mui/icons-material";
 import { capitalizeFirstLetter } from "../../../utils/utils";
 import { ClassEnum } from "../../../common/Planner/ClassEnum";
 import { PlannerCharacter } from "../../../common/Planner/PlannerCharacter";
+import { BASE_URL } from "../../../constants";
 
 export function PlannerPlayers() {
     const theme = useTheme();

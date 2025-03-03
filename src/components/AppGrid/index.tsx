@@ -46,13 +46,6 @@ export function AppGrid() {
       onClick: () => navigate("/raids-gold")
     },
     {
-      imagePath: ItemsList[ItemEnum.DARK_FIRE].image,
-      title: "Jail Check(Out of Service)",
-      subtitle: "Help check for jailers",
-      external: false,
-      onClick: () => navigate("/jail-check")
-    },
-    {
       imagePath: ItemsList[ItemEnum.DESTINY_LEAPSTONE].image,
       title: "Market Prices",
       subtitle: "Set item prices for other apps",
@@ -75,10 +68,17 @@ export function AppGrid() {
     },
     {
       imagePath: ItemsList[ItemEnum.TIER_4_GEM_LVL_7].image,
-      title: "Profile Inspector",
-      subtitle: "Inspect any player character/roster",
+      title: "uwuowo.mathi.moe",
+      subtitle: "Roster inspector",
       external: true,
       onClick: () => window.open('https://uwuowo.mathi.moe/', '_blank')
+    },
+    {
+      imagePath: ItemsList[ItemEnum.LEGENDARY_ENGRAVING].image,
+      title: "Planner",
+      subtitle: "Raids Planner",
+      external: false,
+      onClick: () => navigate("/planner")
     },
   ];
 

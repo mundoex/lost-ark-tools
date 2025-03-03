@@ -4,6 +4,7 @@ import { RaidInfo } from "../common/Raids/RaidInfo";
 export const RAIDS_INFO: readonly RaidInfo[] = [
     {
         name: "Valtan (Solo)",
+        partySize: 1,
         gates: [
             //G1
             {
@@ -59,6 +60,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Valtan (Normal)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -112,6 +114,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Valtan (Hard)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -166,6 +169,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Vykas (Solo)",
+        partySize: 1,
         gates: [
             //G1
             {
@@ -221,6 +225,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Vykas (Normal)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -276,6 +281,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Vykas (Hard)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -332,6 +338,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Clown (Solo)",
+        partySize: 1,
         gates: [
             //G1
             {
@@ -412,6 +419,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Clown",
+        partySize: 4,
         gates: [
             //G1
             {
@@ -493,6 +501,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Brelshaza (Solo)",
+        partySize: 1,
         gates: [
             //G1
             {
@@ -598,6 +607,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Brelshaza (Normal)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -705,6 +715,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Brelshaza (Hard)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -812,6 +823,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Kayangel (Solo)",
+        partySize: 1,
         gates: [
             //G1
             {
@@ -892,6 +904,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Kayangel (Normal)",
+        partySize: 4,
         gates: [
             //G1
             {
@@ -973,6 +986,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Kayangel (Hard)",
+        partySize: 4,
         gates: [
             //G1
             {
@@ -1054,6 +1068,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Akkan (Solo)",
+        partySize: 1,
         gates: [
             //G1
             {
@@ -1134,6 +1149,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Akkan (Normal)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -1215,6 +1231,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Akkan (Hard)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -1296,6 +1313,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Ivory Tower of Chaos (Solo)",
+        partySize: 1,
         gates: [
             //G1
             {
@@ -1376,6 +1394,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Ivory Tower of Chaos (Normal)",
+        partySize: 4,
         gates: [
             //G1
             {
@@ -1457,6 +1476,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Ivory Tower of Chaos (Hard)",
+        partySize: 4,
         gates: [
             //G1
             {
@@ -1538,6 +1558,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Thaemine (Solo)",
+        partySize: 1,
         gates: [
             //G1
             {
@@ -1618,6 +1639,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Thaemine (Normal)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -1699,12 +1721,13 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Thaemine (Hard)",
+        partySize: 8,
         gates: [
             //G1
             {
                 itemLevelRequired: 1620,
                 rewards: {
-                    gold: 3500+900,
+                    gold: 3500 + 900,
                     soloTokens: 250,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 12 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 6 }],
                     honingMatsRewards: [
@@ -1729,7 +1752,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1620,
                 rewards: {
-                    gold: 4500+1000,
+                    gold: 4500 + 1000,
                     soloTokens: 300,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 16 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 9 }],
                     honingMatsRewards: [
@@ -1754,7 +1777,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1620,
                 rewards: {
-                    gold: 7500+1400,
+                    gold: 7500 + 1400,
                     soloTokens: 500,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 24 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 12 }],
                     honingMatsRewards: [
@@ -1780,7 +1803,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             {
                 itemLevelRequired: 1620,
                 rewards: {
-                    gold: 8000+1800,
+                    gold: 8000 + 1800,
                     soloTokens: 0,
                     materialRewards: [{ name: ItemEnum.DARK_FIRE, quantity: 24 }, { name: ItemEnum.MAGICAL_SPRING_WATER, quantity: 12 }],
                     honingMatsRewards: [
@@ -1806,6 +1829,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Echidna (Solo)",
+        partySize: 1,
         gates: [
             //G1
             {
@@ -1857,11 +1881,11 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
                     ],
                 },
             },
-
         ],
     },
     {
         name: "Echidna (Normal)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -1914,11 +1938,11 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
                 },
                 bidBox: [{ name: ItemEnum.AGRIS_SCALE, quantity: 5 }],
             },
-
         ],
     },
     {
         name: "Echidna (Hard)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -1975,6 +1999,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Behemoth",
+        partySize: 16,
         gates: [
             //G1
             {
@@ -2031,6 +2056,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Aegir (Normal)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -2087,6 +2113,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Aegir (Hard)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -2143,6 +2170,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Brelshaza Act2 (Normal)",
+        partySize: 8,
         gates: [
             //G1
             {
@@ -2199,6 +2227,7 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Brelshaza Act2 (Hard)",
+        partySize: 8,
         gates: [
             //G1
             {

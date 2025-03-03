@@ -173,9 +173,25 @@ export const solars_sylmael_120: BuyItem = {
     ],
 };
 
+export const metallurgy_hellfire_11_14_expert_token:BuyItem={
+    type: BuyItemType.NORMAL,
+    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 25 },
+    rewards: [
+        { name: ItemEnum.METALLURGY_HELLFIRE_11_14, quantity: 1 },
+    ],
+};
+
+export const tailoring_hellfire_11_14_expert_token:BuyItem={
+    type: BuyItemType.NORMAL,
+    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 13 },
+    rewards: [
+        { name: ItemEnum.TAILORING_HELLFIRE_11_14, quantity: 1 },
+    ],
+};
+
 export const solars_expert_token:BuyItem={
     type: BuyItemType.SELECTOR,
-    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 6 },
+    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 4 },
     rewards: [
         { name: ItemEnum.SOLAR_GRACE, quantity: 36 },
         { name: ItemEnum.SOLAR_BLESSING, quantity: 12 },
@@ -187,7 +203,7 @@ export const solars_expert_token:BuyItem={
 
 export const shards_expert_token:BuyItem={
     type: BuyItemType.SELECTOR,
-    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 2 },
+    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 1 },
     rewards: [
         { name: ItemEnum.HONOR_SHARD_POUCH_M, quantity: 5 },
         { name: ItemEnum.DESTINY_SHARD_POUCH_M, quantity: 1 },
@@ -196,7 +212,7 @@ export const shards_expert_token:BuyItem={
 
 export const blue_selector_expert_token:BuyItem={
     type: BuyItemType.SELECTOR,
-    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 2 },
+    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 1 },
     rewards: [
         { name: ItemEnum.REFINED_PROTECTION_STONE, quantity: 150 },
         { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 75 },
@@ -205,7 +221,7 @@ export const blue_selector_expert_token:BuyItem={
 
 export const red_selector_expert_token:BuyItem={
     type: BuyItemType.SELECTOR,
-    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 5 },
+    cost: { name: ItemEnum.EXPERT_TOKEN, quantity: 3 },
     rewards: [
         { name: ItemEnum.REFINED_OBLITERATION_STONE, quantity: 150 },
         { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 75 },
@@ -436,6 +452,19 @@ export const mari_prime_oreha_fusion_mat: BuyItem = {
     ],
 };
 
+export const royal_wildsoul_growth: BuyItem = {
+    type: BuyItemType.NORMAL,
+    cost: { name: ItemEnum.SUNSET_SCALE, quantity: 5000 },
+    rewards: [
+        { name: ItemEnum.DESTINY_SHARD_POUCH_M, quantity: 100 },
+        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 20*40 },
+        { name: ItemEnum.ABIDOS_FUSION_MATERIAL, quantity: 20*20 },
+        { name: ItemEnum.GLACIERS_BREATH, quantity: 20*80 },
+        { name: ItemEnum.TRANSCENDENCE_TICKET_ARMOR, quantity: 20*10 },
+        { name: ItemEnum.TRANSCENDENCE_TICKET_WEAPON, quantity: 20*5 },
+    ],
+};
+
 export const RaidsBuyItemList=[
     honing_mats_behe,
     breaths_behe,
@@ -462,7 +491,8 @@ export const GuildBuyItemList=[
 ];
 
 export const ExpertShopBuyItemList=[
-    relic_book_expert_token,
+    metallurgy_hellfire_11_14_expert_token,
+    tailoring_hellfire_11_14_expert_token,
     trans_ticket_expert_token,
     gold_bar_bound_expert_token,
     solars_expert_token,
@@ -498,6 +528,7 @@ export const MariShopBuyItemList=[
     mari_superior_oreha_fusion_mat_100,
     mari_superior_oreha_fusion_mat_200,
     mari_prime_oreha_fusion_mat,
+
 ];
 
 export const BuyItemList = [

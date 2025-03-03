@@ -4,6 +4,7 @@ import { RaidInfo } from "../common/Raids/RaidInfo";
 export const GUARDIANS_RAIDS_INFO: readonly RaidInfo[] = [
     {
         name: "Sonavel",
+        partySize: 4,
         gates: [
             {
                 itemLevelRequired: 1580,
@@ -28,6 +29,7 @@ export const GUARDIANS_RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Gargadeth",
+        partySize: 4,
         gates: [
             {
                 itemLevelRequired: 1600,
@@ -52,6 +54,7 @@ export const GUARDIANS_RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Veskal",
+        partySize: 4,
         gates: [
             {
                 itemLevelRequired: 1610,
@@ -76,6 +79,7 @@ export const GUARDIANS_RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Argeos",
+        partySize: 4,
         gates: [
             {
                 itemLevelRequired: 1640,
@@ -100,6 +104,7 @@ export const GUARDIANS_RAIDS_INFO: readonly RaidInfo[] = [
     },
     {
         name: "Skolakia",
+        partySize: 4,
         gates: [
             {
                 itemLevelRequired: 1680,

@@ -64,3 +64,8 @@ export function convertToT4(itemQuantityArr:ItemQuantity[]): ItemQuantity[] {
 export function gemToLvl1s(gemLvl:number):number{
     return Math.pow(3, gemLvl-1)
 }
+
+export function capitalizeFirstLetter(str: string): string {
+    if (!str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}

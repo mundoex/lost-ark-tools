@@ -9,6 +9,7 @@ import { JailCheck } from "./components/JailCheck";
 import { MarketPrices } from "./components/GoldEfficiency/components/MarketPrices";
 import { GoldEfficiency } from "./components/GoldEfficiency";
 import { CubeAndGems } from "./components/CubeAndGems";
+import { Planner } from "./components/Planner";
 
 const routesObj = [
   { path: "", Component: AppGrid },
@@ -18,25 +19,27 @@ const routesObj = [
   { path: "/market-prices", Component: MarketPrices },
   { path: "/gold-efficiency", Component: GoldEfficiency },
   { path: "/cubes-and-gems", Component: CubeAndGems },
+  { path: "/planner/:playerName?", Component: Planner },
 ];
 
 const darkTheme: ThemeOptions = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#4dabf5', // Customize primary color
+      main: '#90caf9', // Light blue for primary
     },
     secondary: {
-      main: '#ff4081', // Customize secondary color
+      main: '#f48fb1', // Light pink for secondary
     },
     background: {
-      default: '#121212', // Dark background color
-      paper: '#1d1d1d',   // Slightly lighter for paper elements
+      default: '#121212', // Dark background
+      paper: '#1e1e1e',   // Slightly lighter for paper elements
     },
     text: {
-      primary: '#ffffff',
-      secondary: '#b0b0b0',
+      primary: '#ffffff',  // White for primary text
+      secondary: '#b3b3b3', // Light gray for secondary text
     },
+    divider: 'rgba(255, 255, 255, 0.12)', // Subtle divider color
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
@@ -44,13 +47,13 @@ const darkTheme: ThemeOptions = createTheme({
     h2: { fontSize: '2rem', fontWeight: 700 },
     h3: { fontSize: '1.75rem', fontWeight: 700 },
     body1: { fontSize: '1rem', color: '#ffffff' },
-    body2: { fontSize: '0.875rem', color: '#b0b0b0' },
+    body2: { fontSize: '0.875rem', color: '#b3b3b3' },
   },
   components: {
     MuiAppBar: {
       styleOverrides: {
         colorPrimary: {
-          backgroundColor: '#333', // Darker AppBar
+          backgroundColor: '#1e1e1e', // Darker AppBar
         },
       },
     },
@@ -62,18 +65,18 @@ const darkTheme: ThemeOptions = createTheme({
           padding: '8px 16px',
         },
         contained: {
-          backgroundColor: '#4dabf5',
-          color: '#fff',
+          backgroundColor: '#90caf9', // Primary color for contained buttons
+          color: '#121212', // Dark text for contrast
           '&:hover': {
-            backgroundColor: '#1e88e5',
+            backgroundColor: 'rgba(0, 79, 143, 0.08)', // Slightly lighter on hover
           },
         },
         outlined: {
-          borderColor: '#4dabf5',
-          color: '#4dabf5',
+          borderColor: '#ffffff', // Primary color for outlined buttons
+          color: '#ffffff', // Primary color for text
           '&:hover': {
-            borderColor: '#1e88e5',
-            backgroundColor: 'rgba(77, 171, 245, 0.08)',
+            borderColor: 'rgba(255, 255, 255, 0.5)', // Slightly lighter on hover
+            backgroundColor: 'rgba(147, 157, 165, 0.1)', // Subtle hover background
           },
         },
       },
@@ -81,10 +84,10 @@ const darkTheme: ThemeOptions = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: '#1d1d1d',
-          color: '#fff',
-          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.5)',
-          borderRadius: '12px',
+          backgroundColor: '#1e1e1e', // Dark background for cards
+          color: '#ffffff', // White text for cards
+          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.5)', // Subtle shadow
+          borderRadius: '12px', // Rounded corners
         },
       },
     },
@@ -95,6 +98,13 @@ const darkTheme: ThemeOptions = createTheme({
         },
       },
     },
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          borderColor: 'rgba(255, 255, 255, 0.12)', // Subtle divider color
+        },
+      },
+    },
   },
 });
 
@@ -102,7 +112,7 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <HashRouter>
-      <CustomAppBar/>
+        <CustomAppBar />
         <div style={{ minWidth: "100%" }}>
           <Routes>
             {routesObj.map(({ path, Component }) => (

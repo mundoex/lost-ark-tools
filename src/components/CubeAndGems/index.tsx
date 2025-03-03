@@ -20,8 +20,6 @@ export function CubeAndGems() {
     const tier3Lvl1GemPrice = tier3LvlGemPrice / gemToLvl1s(gemMarkerInUse.lvl);
     const tier4Lvl1GemPrice = tier4LvlGemPrice / gemToLvl1s(gemMarkerInUse.lvl);
 
-    console.log(cubeData)
-
     const setPriceTier3Price = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const num = parseFloat(e.target.value)
         if (!isNaN(num)) {

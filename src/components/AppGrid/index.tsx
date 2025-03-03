@@ -46,13 +46,6 @@ export function AppGrid() {
       onClick: () => navigate("/raids-gold")
     },
     {
-      imagePath: ItemsList[ItemEnum.DARK_FIRE].image,
-      title: "Jail Check",
-      subtitle: "Help check for jailers",
-      external: false,
-      onClick: () => navigate("/jail-check")
-    },
-    {
       imagePath: ItemsList[ItemEnum.DESTINY_LEAPSTONE].image,
       title: "Market Prices",
       subtitle: "Set item prices for other apps",
@@ -67,11 +60,25 @@ export function AppGrid() {
       onClick: () => navigate("/gold-efficiency")
     },
     {
-      imagePath: ItemsList[ItemEnum.TIER_4_GEM_LVL_7].image,
+      imagePath: ItemsList[ItemEnum.TIER_3_GEM_LVL_7].image,
       title: "Cubes & Gems (BETA)",
       subtitle: "Cube & Gems maths Beta version",
       external: false,
       onClick: () => navigate("/cubes-and-gems")
+    },
+    {
+      imagePath: ItemsList[ItemEnum.TIER_4_GEM_LVL_7].image,
+      title: "uwuowo.mathi.moe",
+      subtitle: "Roster inspector",
+      external: true,
+      onClick: () => window.open('https://uwuowo.mathi.moe/', '_blank')
+    },
+    {
+      imagePath: ItemsList[ItemEnum.LEGENDARY_ENGRAVING].image,
+      title: "Planner",
+      subtitle: "Raids Planner",
+      external: false,
+      onClick: () => navigate("/planner")
     },
   ];
 

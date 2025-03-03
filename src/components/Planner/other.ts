@@ -2,7 +2,7 @@ import { ClassEnum } from "../../common/Planner/ClassEnum";
 import { PlannerCharacter } from "../../common/Planner/PlannerCharacter";
 import { PlannerPlayer } from "../../common/Planner/PlannerPlayer";
 
-export function formatRosterImportData(data: any) {
+export function formatRosterImportData(data:any) {
     const map = {
         "berserker": ClassEnum.BERSERKER,
         "holyknight": ClassEnum.PALADIN,
@@ -42,11 +42,13 @@ export function formatRosterImportData(data: any) {
     const dataNode = data.nodes.find((node: any) => node.type === 'data') as { data: any[] };
     const chars: PlannerCharacter[] = [];
     const starts: any[] = dataNode.data[1];
+    type ClassKey = keyof typeof map;
     starts.forEach((startIndex) => {
-        const charDataIndexes = dataNode.data[startIndex] as { name: number, class: string, ilvl: number };
+        const charDataIndexes = dataNode.data[startIndex] as { name: number, class: number, ilvl: number };
+        const v=dataNode.data as ClassKey[];
         const char: PlannerCharacter = {
             name: dataNode.data[charDataIndexes.name],
-            class: map[dataNode.data[charDataIndexes.class]],
+            class: map[v[charDataIndexes.class]],
             itemLevel: dataNode.data[charDataIndexes.ilvl],
         };
         chars.push(char);

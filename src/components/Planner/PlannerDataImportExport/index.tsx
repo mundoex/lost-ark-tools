@@ -9,8 +9,14 @@ export function PlannerDataImportExport() {
 
     const handlePlayerDataStringChange = (event: any) => setPlayerDataString(event.target.value);
     const handleRaidPlansDataStringChange = (event: any) => setRaidPlansDataString(event.target.value);
-    const handleImportPlayerData = () => plannerContext.importPlayerData(playerDataString);
-    const handleImportRaidPlansData = () => plannerContext.importRaidsPlansData(raidPlansDataString);
+    const handleImportPlayerData = () => {
+        plannerContext.importPlayerData(playerDataString);
+        alert('Players Data imported');
+    };
+    const handleImportRaidPlansData = () => {
+        plannerContext.importRaidsPlansData(raidPlansDataString);
+        alert('Raid Plans Data imported');
+    };
 
     const handleCopyPlayersDataToClipboard = () => {
         const playerDataString = JSON.stringify(plannerContext.playersPlannerData);

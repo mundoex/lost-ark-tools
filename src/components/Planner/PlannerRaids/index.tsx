@@ -162,9 +162,6 @@ function PlayersGrid(props: IPlayersGridProps) {
     const context = useContext(PlannerContext);
     const raidInfo = RAIDS_INFO.find((info) => info.name === props.raidName);
     const playersArr = [...props.players, ...Array(Math.max(0, 4 - props.players.length)).fill(null)];
-    const playersAlreadyInParty = context.raidsPlannerData.raidPlans[props.plannerIndex].parties.map((party)=>party.map((char)=>char.charName))
-        .flat()
-        .filter((name, index, self) => name && self.indexOf(name) === index);
 
     return <Grid container sx={{ border: "1px solid white", minWidth: '380px' }}>
         <Grid item sx={{ width: '100%' }}>
@@ -181,7 +178,7 @@ function PlayersGrid(props: IPlayersGridProps) {
                             onChange={(e) => props.setPlayer(i,e.target.value)}
                             sx={{ height: "30px", width: "100%" }}
                         >
-                            {context.playerNames().filter((name=>!playersAlreadyInParty.includes(name))).map((pName) => (
+                            {context.playerNames().map((pName) => (
                                 <MenuItem key={pName} value={pName}>
                                     {pName}
                                 </MenuItem>
@@ -200,7 +197,7 @@ function PlayersGrid(props: IPlayersGridProps) {
                                     return (
                                         <Box display="flex" alignItems="center">
                                             <Typography sx={{ marginRight: "2px" }}>{selectedOption?.itemLevel.toFixed(0)}</Typography>
-                                            <img src={CLASS_ICON_MAP[selectedOption?.class.toLowerCase() ?? ""]} style={{ width: "18px", height: "18px", marginRight: "2px" }}></img>
+                                            <img src={CLASS_ICON_MAP[selectedOption?.class?.toLowerCase() ?? ""]} style={{ width: "18px", height: "18px", marginRight: "2px" }}></img>
                                             <Typography>{selectedOption?.name}</Typography>
                                         </Box>)
                                 } else {

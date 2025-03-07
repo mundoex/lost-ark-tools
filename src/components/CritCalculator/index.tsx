@@ -273,14 +273,15 @@ function CritStat(props: { onCritChange: (value: number) => void }) {
     const [count, setCount] = useState(0);
     const maxCount = 30;
     const STAT_PER_1_POINT = 50;
+    const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
 
     const increment = (e: any) => {
         const mult = e.shiftKey ? 10 : 1;
-        count < maxCount && (setCount(count + mult));
+        count < maxCount && (setCount(clamp(count+mult,0,30)));
     };
     const decrement = (e: any) => {
         const mult = e?.shiftKey ? 10 : 1;
-        count > 0 && (setCount(count - mult))
+        count > 0 && (setCount(clamp(count-mult,0,30)));
     };
 
     useEffect(() => { props.onCritChange(count * STAT_PER_1_POINT); }, [count]);

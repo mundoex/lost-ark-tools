@@ -10,6 +10,7 @@ import { MarketPrices } from "./components/GoldEfficiency/components/MarketPrice
 import { GoldEfficiency } from "./components/GoldEfficiency";
 import { CubeAndGems } from "./components/CubeAndGems";
 import { Planner } from "./components/Planner";
+import { CritCalculator } from "./components/CritCalculator";
 
 const routesObj = [
   { path: "", Component: AppGrid },
@@ -20,6 +21,7 @@ const routesObj = [
   { path: "/gold-efficiency", Component: GoldEfficiency },
   { path: "/cubes-and-gems", Component: CubeAndGems },
   { path: "/planner/:playerName?", Component: Planner },
+  { path: "/crit-calc", Component: CritCalculator },
 ];
 
 const darkTheme: ThemeOptions = createTheme({

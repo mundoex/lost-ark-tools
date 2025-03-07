@@ -5,6 +5,7 @@ import { ItemEnum } from "../../common/Items/ItemEnum";
 import { ItemsList } from "../../constants/ItemList";
 import { AppCardProps } from "../AppCard/types";
 import { BASE_URL } from "../../constants";
+import { ARK_PASSIVE_CRIT_SRC } from "../../assets/images-src";
 
 export function AppGrid() {
   const navigate = useNavigate();
@@ -79,6 +80,13 @@ export function AppGrid() {
       subtitle: "Raids Planner",
       external: false,
       onClick: () => navigate("/planner")
+    },
+    {
+      imagePath: ARK_PASSIVE_CRIT_SRC,
+      title: "Crit Calculator",
+      subtitle: "Crit Calculator",
+      external: false,
+      onClick: () => navigate("/crit-calc")
     },
   ];
 

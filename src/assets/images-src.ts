@@ -31,6 +31,19 @@ export const GUNSLINGER_ICON_SRC="https://logs.snow.xyz/images/classes/512.png";
 export const ARTIST_ICON_SRC="https://logs.snow.xyz/images/classes/602.png";
 export const AEROMANCER_ICON_SRC="https://logs.snow.xyz/images/classes/603.png";
 
+export const ENGRAVING_ADRENALINE_SRC="https://cdn.ags.lol/icon/ability_235.png";
+export const ENGRAVING_PRECISE_DAGGER_SRC="https://cdn.ags.lol/icon/ability_239.png";
+
+export const ARK_PASSIVE_CRIT_SRC="https://cdn.ags.lol/icon/ark_passive_evolution_1.png";
+export const ARK_PASSIVE_KEEN_SENCE_SRC="https://cdn.ags.lol/icon/ark_passive_evolution_29.png";
+export const ARK_PASSIVE_ZEALOUS_SMITE_SRC="https://cdn.ags.lol/icon/ark_passive_evolution_27.png";
+export const ARK_PASSIVE_STRIKE_SRC="https://cdn.ags.lol/icon/ark_passive_evolution_32.png";
+
+export const T4_ANCIENT_RING_SRC="https://cdn.ags.lol/icon/acc_22.png";
+export const T4_ANCIENT_BRACELET_SRC="https://cdn.ags.lol/icon/acc_327.png";
+export const T4_ANCIENT_STONE_SRC="https://cdn.ags.lol/icon/ability_246.png";
+export const T3_ANCIENT_BRACELET_SRC="https://cdn.ags.lol/icon/acc_304.png";
+
 export const CLASS_ICON_MAP: Record<string, string> = {
     "berserker": BERSERKER_ICON_SRC,
     "destroyer": DESTROYER_ICON_SRC,

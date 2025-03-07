@@ -69,3 +69,8 @@ export function capitalizeFirstLetter(str: string): string {
     if (!str) return str;
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+export function critStatToCritPercentage(stat: number) {
+    const critMult = 0.03579;
+    return critMult * stat;
+}

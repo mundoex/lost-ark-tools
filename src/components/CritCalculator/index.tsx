@@ -336,7 +336,7 @@ export function CritCalculator() {
         const value = Number(e.target.value === "" ? 0 : e.target.value);
         if (!isNaN(value)) {
             setOtherPercentage(value);
-            critManager.emitCritChanceChange("other", value);
+            critManager.emitCritChanceChange("otherPercentage", value);
         }
     };
 

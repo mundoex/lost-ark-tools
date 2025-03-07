@@ -346,16 +346,15 @@ export function CritCalculator() {
     };
 
     useEffect(() => {
-        critManager.emitCritStatChange("bracelet", braceletCrit);
-        critManager.emitCritStatChange("baseCrit", baseCrit);
-        critManager.emitCritChanceChange("otherPercentage", otherPercentage);
-
         const updateUI = () => {
             setTotalCritStat(critManager.totalCritStat);
             setTotalCritChance(critManager.totalCritChance);
         };
 
         critManager.eventer.on(CritEventType.CHANGE, () => updateUI());
+        critManager.emitCritStatChange("bracelet", braceletCrit);
+        critManager.emitCritStatChange("baseCrit", baseCrit);
+        critManager.emitCritChanceChange("otherPercentage", otherPercentage);
 
 
     }, [baseCrit, braceletCrit, otherPercentage]);

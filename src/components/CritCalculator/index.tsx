@@ -355,9 +355,9 @@ export function CritCalculator() {
         critManager.emitCritStatChange("bracelet", braceletCrit);
         critManager.emitCritStatChange("baseCrit", baseCrit);
         critManager.emitCritChanceChange("otherPercentage", otherPercentage);
-
-
     }, [baseCrit, braceletCrit, otherPercentage]);
+
+    const bluntThornEvoDmg = 15+(Math.max(0,totalCritChance-80))*1.4
 
     return <Box>
         <Box sx={{ display: "flex", flexDirection: "row" }}>
@@ -400,7 +400,7 @@ export function CritCalculator() {
 
             </Box>
             <Box sx={{ display: "flex", flexDirection: "column", margin: 1 }}>
-                <Typography variant="h2">{`Blunt Thorn: ${Math.max(0,totalCritChance-80).toFixed(2)}/70% Evo Dmg`}</Typography>
+                <Typography variant="h2">{`Blunt Thorn: ${bluntThornEvoDmg.toFixed(2)}/70% Evo Dmg`}</Typography>
                 <img src={ARK_PASSIVE_BLUNT_THORN_SRC} width={"64px"} height={"64px"} style={{ margin: "2px" }}></img>
             </Box>
         </Box>

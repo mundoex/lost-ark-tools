@@ -1,5 +1,5 @@
 import { Box, Checkbox, FormControlLabel, TextField } from "@mui/material";
-import { ARK_PASSIVE_CRIT_SRC, ARK_PASSIVE_KEEN_SENCE_SRC, ARK_PASSIVE_STRIKE_SRC, ARK_PASSIVE_ZEALOUS_SMITE_SRC, ENGRAVING_ADRENALINE_SRC, ENGRAVING_PRECISE_DAGGER_SRC, T3_ANCIENT_BRACELET_SRC, T4_ANCIENT_BRACELET_SRC, T4_ANCIENT_RING_SRC, T4_ANCIENT_STONE_SRC } from "../../assets/images-src";
+import { ARK_PASSIVE_BLUNT_THORN_SRC, ARK_PASSIVE_CRIT_SRC, ARK_PASSIVE_KEEN_SENCE_SRC, ARK_PASSIVE_STRIKE_SRC, ARK_PASSIVE_ZEALOUS_SMITE_SRC, ENGRAVING_ADRENALINE_SRC, ENGRAVING_PRECISE_DAGGER_SRC, T3_ANCIENT_BRACELET_SRC, T4_ANCIENT_BRACELET_SRC, T4_ANCIENT_RING_SRC, T4_ANCIENT_STONE_SRC } from "../../assets/images-src";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import IconButton from '@mui/material/IconButton';
@@ -397,8 +397,12 @@ export function CritCalculator() {
                 <Typography variant="h2">{`Total Crit Stat: ${totalCritStat}`}</Typography>
                 <Typography variant="h2">{`Total Crit Chance: ${totalCritChance.toFixed(2)}%`} </Typography>
                 <CritStat onCritChange={(num: number) => critManager.emitCritStatChange("arkPassive", num)} />
-            </Box>
 
+            </Box>
+            <Box sx={{ display: "flex", flexDirection: "column", margin: 1 }}>
+                <Typography variant="h2">{`Blunt Thorn: ${Math.max(0,totalCritChance-80).toFixed(2)}/70% Evo Dmg`}</Typography>
+                <img src={ARK_PASSIVE_BLUNT_THORN_SRC} width={"64px"} height={"64px"} style={{ margin: "2px" }}></img>
+            </Box>
         </Box>
         <Box>
             <Box sx={{ display: "flex", flexDirection: "row", width: "fit-content", margin: 1 }}>

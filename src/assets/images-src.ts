@@ -38,6 +38,7 @@ export const ARK_PASSIVE_CRIT_SRC="https://cdn.ags.lol/icon/ark_passive_evolutio
 export const ARK_PASSIVE_KEEN_SENCE_SRC="https://cdn.ags.lol/icon/ark_passive_evolution_29.png";
 export const ARK_PASSIVE_ZEALOUS_SMITE_SRC="https://cdn.ags.lol/icon/ark_passive_evolution_27.png";
 export const ARK_PASSIVE_STRIKE_SRC="https://cdn.ags.lol/icon/ark_passive_evolution_32.png";
+export const ARK_PASSIVE_BLUNT_THORN_SRC="https://cdn.ags.lol/icon/ark_passive_evolution_20.png";
 
 export const T4_ANCIENT_RING_SRC="https://cdn.ags.lol/icon/acc_22.png";
 export const T4_ANCIENT_BRACELET_SRC="https://cdn.ags.lol/icon/acc_327.png";

@@ -348,7 +348,7 @@ export const prime_oreha_solo_token:BuyItem={
 
 export const mari_abidos_fusion_mat:BuyItem = {
     type: BuyItemType.NORMAL,
-    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 90 },
+    cost: { name: ItemEnum.BLUE_CRYSTAL, quantity: 65 },
     rewards: [
         { name: ItemEnum.ABIDOS_FUSION_MATERIAL, quantity: 50 },
 

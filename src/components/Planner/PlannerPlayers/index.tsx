@@ -1,7 +1,7 @@
 import { useCallback, useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PlannerContext } from "../../../context/PlannerContext";
-import { Box, Button, Card, CardContent, CardMedia, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography, useTheme } from "@mui/material";
+import { Box, Button, Card, CardContent, CardMedia, CircularProgress, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography, useTheme } from "@mui/material";
 import { HexColorPicker } from "react-colorful";
 import { CLASS_ICON_MAP } from "../../../assets/images-src";
 import { getRosterImportData } from "../api";
@@ -23,7 +23,7 @@ export function PlannerPlayers() {
 
     const [playerName, setPlayerName] = useState('');
     const [color, setColor] = useState("#ffffff");
-
+    const [loadingUpdateAllPlayers, setLoadingUpdateAllPlayers] = useState(false);
 
     const [plannerCharacter, setPlannerCharacter] = useState<PlannerCharacter>({
         name: "",
@@ -47,12 +47,37 @@ export function PlannerPlayers() {
         }
     };
 
-    const handleImportRoster = async () => {
-        const nameToUpperStart = capitalizeFirstLetter(plannerCharacter.name);
+    const onClickHandleImportRoster = async () => {
+        if(selectedPlayer){
+            await handleImportRoster(selectedPlayer, plannerCharacter);
+        }
+    };
+
+    const handleImportRoster = async(playerName:string, plannerCharacterParam:PlannerCharacter) => {
+        const nameToUpperStart = capitalizeFirstLetter(plannerCharacterParam.name);
         const data = await getRosterImportData(nameToUpperStart, plannerContext.apiIp);
         const chars = formatRosterImportData(data);
         const charsSortedByIlvl = chars.sort((a, b) => b.itemLevel - a.itemLevel);
-        if (selectedPlayer) plannerContext.importRoster(selectedPlayer, charsSortedByIlvl);
+        plannerContext.importRoster(playerName, charsSortedByIlvl);
+    }
+
+    const handleUpdateAllPlayers = async () => {
+        const playerNameAndMainChar = plannerContext.playersPlannerData.players.map((player)=>({ playerName: player.name, plannerCharacter: getHighestItemLevelCharacter(player) }));
+        const playersAndRoster=[];
+        setLoadingUpdateAllPlayers(true);
+        for (let i = 0; i < playerNameAndMainChar.length; i++) {
+            const { playerName, plannerCharacter } = playerNameAndMainChar[i];
+            if(plannerCharacter){
+                const nameToUpperStart = capitalizeFirstLetter(plannerCharacter?.name);
+                const data = await getRosterImportData(nameToUpperStart, plannerContext.apiIp);
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                const chars = formatRosterImportData(data);
+                const charsSortedByIlvl = chars.sort((a, b) => b.itemLevel - a.itemLevel);
+                playersAndRoster.push({playerName, roster: charsSortedByIlvl});
+            }
+        }
+        setLoadingUpdateAllPlayers(false);
+        plannerContext.importAllRosters(playersAndRoster);
     };
 
     const getGridPropsForPlayers = useCallback((length: number) => {
@@ -82,6 +107,10 @@ export function PlannerPlayers() {
     }, []);
 
     return <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Button color="primary" variant="outlined" onClick={handleUpdateAllPlayers} sx={{marginBlock:2}}>
+            Update All Players
+        </Button>
+        {loadingUpdateAllPlayers && <CircularProgress size={20}/>}
         {!selectedPlayer && (
             <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 2 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', alignSelf: 'center', width: 'fit-content', marginTop: "10px", gap: 2 }}>
@@ -209,7 +238,7 @@ export function PlannerPlayers() {
                     onChange={handleCharacterNameChange}
                     fullWidth
                 />
-                <Button variant="outlined" color="primary" onClick={handleImportRoster} sx={{ minWidth: '125px' }}>
+                <Button variant="outlined" color="primary" onClick={onClickHandleImportRoster} sx={{ minWidth: '125px' }}>
                     Import Roster from Character Name
                 </Button>
                 <Typography variant="caption" sx={{ color: 'text.secondary', marginTop: -1 }}>

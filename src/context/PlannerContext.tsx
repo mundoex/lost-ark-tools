@@ -27,6 +27,7 @@ interface IPlannerContext{
     importPlayerData:(dataString:string) => void;
     importRaidsPlansData:(dataString:string) => void;
     importRoster:(playerName:string, roster:PlannerCharacter[]) => void;
+    importAllRosters:(arr:{playerName:string, roster: PlannerCharacter[]}[]) => void;
     setApiIp:(apiIp:string)=>void;
 
     //helper functions
@@ -65,6 +66,7 @@ export const PlannerContext=createContext<IPlannerContext>({
     importPlayerData: (_: string) => { },
     importRaidsPlansData: (_: string) => { },
     importRoster: (_: string, __: PlannerCharacter[]) => { },
+    importAllRosters: (_: {playerName:string, roster: PlannerCharacter[]}[]) => {},
     playerNames: () => [] as string[],
     playerChars: (_: string) => [] as PlannerCharacter[],
     setApiIp: (_: string) => { },
@@ -164,6 +166,25 @@ export function PlannerProvider({children}:{children?:JSX.Element|JSX.Element[]}
             lastEditedAt: Date.now()
         }));
     };
+
+    const importAllRosters = (arr:{playerName:string, roster: PlannerCharacter[]}[]) => {
+        const updatedPlayers = [...playersPlannerData.players];
+        arr.forEach(({playerName, roster}) => {
+            const playerIndex = updatedPlayers.findIndex(player => player.name === playerName);
+            if (playerIndex !== -1) {
+                updatedPlayers[playerIndex] = {
+                    ...updatedPlayers[playerIndex],
+                    roster
+                };
+            }
+        });
+
+        setPlayersPlannerData(prevData => ({
+            ...prevData,
+            players: updatedPlayers,
+            lastEditedAt: Date.now()
+        }));
+    }
 
     const playerNames = ()=> playersPlannerData.players.map((p)=>p.name);
     const playerChars = (playerName:string)=> playersPlannerData.players.find((p)=>p.name===playerName)?.roster ?? [];
@@ -343,6 +364,7 @@ export function PlannerProvider({children}:{children?:JSX.Element|JSX.Element[]}
         importPlayerData,
         importRaidsPlansData,
         importRoster,
+        importAllRosters,
         addRaid,
         deleteRaid,
         sortByNumber,

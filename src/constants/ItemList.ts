@@ -68,6 +68,8 @@ export const ItemsList: Record<ItemEnum, ItemRecord> = {
     [ItemEnum.ALCAONE_EYE]: { image: `${BASE_URL}alcaone_eye.webp` },
     [ItemEnum.BEHEMOTH_SCALE]: { image: `${BASE_URL}behemoth_scale.png` },
     [ItemEnum.HELLFIRE_KEYSTONE]: { image: `${BASE_URL}hellfire_keystone.webp`, tier: 4 },
+    [ItemEnum.THUNDERCRACK_HORN]: { image: `${BASE_URL}thundercrack_horn.png`, tier: 4 },
+    [ItemEnum.THUNDER_GLOBE]: { image: `${BASE_URL}thunder_globe.png`, tier: 4 },
 
     //other
     [ItemEnum.TRANSCENDENCE_TICKET_WEAPON]: { image: `${BASE_URL}trans_ticket_weapon.png` },

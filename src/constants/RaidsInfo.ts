@@ -2282,4 +2282,185 @@ export const RAIDS_INFO: readonly RaidInfo[] = [
             },
         ],
     },
+    {
+        name: "Mordum (Normal)",
+        partySize: 8,
+        gates: [
+            //G1
+            {
+                itemLevelRequired: 1680,
+                rewards: {
+                    gold: 6000,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.THUNDERCRACK_HORN, quantity: 3 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 320 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 640 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 2600 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 2400,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.THUNDERCRACK_HORN, quantity: 3 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 500 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1000 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 18 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 2600 },
+                    ],
+                },
+            },
+            //G2
+            {
+                itemLevelRequired: 1680,
+                rewards: {
+                    gold: 9500,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.THUNDERCRACK_HORN, quantity: 5 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 400 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 800 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 3000 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 3200,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.THUNDERCRACK_HORN, quantity: 5 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 620 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1240 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 20 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 5600 },
+                    ],
+                },
+            },
+            //G3
+            {
+                itemLevelRequired: 1680,
+                rewards: {
+                    gold: 12500,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.THUNDERCRACK_HORN, quantity: 10 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 520 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1040 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 4200 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 4200,
+                    soloTokens: 0,
+                    materialRewards: [{ name: ItemEnum.THUNDERCRACK_HORN, quantity: 10 }],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 840 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1680 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 26 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 7400 },
+                    ],
+                },
+                bidBox: [{ name: ItemEnum.THUNDERCRACK_HORN, quantity: 10 }],
+            },
+        ],
+    },
+    {
+        name: "Mordum (Hard)",
+        partySize: 8,
+        gates: [
+            //G1
+            {
+                itemLevelRequired: 1700,
+                rewards: {
+                    gold: 7000,
+                    soloTokens: 0,
+                    materialRewards: [
+                        { name: ItemEnum.THUNDER_GLOBE, quantity: 3 }
+                    ],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 440 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 880 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 3400 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 2700,
+                    materialRewards: [
+                        { name: ItemEnum.THUNDER_GLOBE, quantity: 3 }
+                    ],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 830 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1660 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 31 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 7000 },
+                    ],
+                },
+            },
+            //G2
+            {
+                itemLevelRequired: 1700,
+                rewards: {
+                    gold: 11000,
+                    soloTokens: 0,
+                    materialRewards: [
+                        { name: ItemEnum.THUNDER_GLOBE, quantity: 5 }
+                    ],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 520 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1040 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 4000 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 4100,
+                    materialRewards: [
+                        { name: ItemEnum.THUNDER_GLOBE, quantity: 5 }
+                    ],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 1140 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 2280 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 36 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 9900 },
+                    ],
+                },
+            },
+            //G3
+            {
+                itemLevelRequired: 1700,
+                rewards: {
+                    gold: 20000,
+                    soloTokens: 0,
+                    materialRewards: [
+                        { name: ItemEnum.THUNDER_GLOBE, quantity: 10 }
+                    ],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 640 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 1280 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 0 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 5600 },
+                    ],
+                },
+                extraRewards: {
+                    gold: 5800,
+                    materialRewards: [
+                        { name: ItemEnum.THUNDER_GLOBE, quantity: 10 }
+                    ],
+                    honingMatsRewards: [
+                        { name: ItemEnum.DESTINY_DESTRUCTION_STONE, quantity: 2080 },
+                        { name: ItemEnum.DESTINY_GUARDIAN_STONE, quantity: 4160 },
+                        { name: ItemEnum.DESTINY_LEAPSTONE, quantity: 64 },
+                        { name: ItemEnum.DESTINY_SHARD, quantity: 16800 },
+                    ],
+                },
+                bidBox: [
+                    { name: ItemEnum.THUNDER_GLOBE, quantity: 10 }
+                ],
+            },
+        ],
+    },
 ]

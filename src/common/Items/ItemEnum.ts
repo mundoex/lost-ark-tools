@@ -58,6 +58,8 @@ export enum ItemEnum {
     ALCAONE_EYE = "Alcaone Eye",
     BEHEMOTH_SCALE = "Behemoth Scale",
     HELLFIRE_KEYSTONE = "Hellfire Keystone",
+    THUNDERCRACK_HORN = "ThunderCrack Horn",
+    THUNDER_GLOBE = "Thunder Globe",
 
     TRANSCENDENCE_TICKET_WEAPON = "Transcendence Ticket Weapon",
     TRANSCENDENCE_TICKET_ARMOR = "Transcendence Ticket Armor",
